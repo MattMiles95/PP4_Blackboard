@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lexend:wght@100..900&family=Patrick+Hand&display=swap');
+/*/*--------------------------------------- GLOBAL */
+body {
+    color: white;
+    font-family: 'Indie Flower', cursive;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+hr {
+    color: white !important;
+    opacity: .75 !important;
+}
+
+.main-bg {
+    background-image: url('/static/images/empty-bg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.readable-font {
+    font-family: 'Patrick Hand', cursive !important;
+}
+
+.lesson-font {
+    font-family: 'Lexend', sans-serif;
+}
+
+.form-container {
+    margin-bottom: 5rem;
+}
+
+/*--------------------------------------- BASE TEMPLATE */
+nav {
+    z-index: 9;
+    padding: 0 0 !important;
+}
+
+.navbar {
+    background-color: black;
+    border-bottom: white 2px groove;
+    height: 4rem;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    color: white !important;
+}
+
+.navbar-brand:hover {
+    text-shadow: 0 0 5px white !important;
+    transition: 0.1s;
+}
+
+.nav-link {
+    font-size: 1.2em;
+    color: white !important;
+    padding: 1rem !important;
+}
+
+.nav-link:hover {
+    text-shadow: 0 0 5px white !important;
+    transition: 0.1s;
+}
+
+.navbar-dark, .navbar-toggler {
+    color: white !important;
+    border-color: white !important;
+}
+
+.navbar-toggler {
+    padding: 0.25rem !important;
+    font-size: 1rem !important;
+}
+
+.navbar-toggler:hover {
+    border: 1px solid white !important;
+    box-shadow: #fff 0 0 5px !important;
+    transition: 0.1s;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.welcome-text {
+    font-size: 1.2rem;
+    color: #84d5a6;
+    margin-left: 0 !important;
+}
+
+.signed-out-text {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #d5aa84c0;
+}
+
+.footer {
+    background-color: black;
+    border-top: white 2px groove;
+    position: relative;
+    bottom: -2rem;
+    z-index: 9;
+}
+
+.msg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size: 1.5rem;
+    border: #79b390 2px groove;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px;
+}
+
+.modal-backdrop {
+    display: none;
+}
+
+/*--------------------------------------- HOMEPAGE */
+.center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-wrap: nowrap;
+    position: relative;
+    top: 10rem;
+}
+
+.container-flex {
+    margin: 0;
+}
+
+.class-button {
+    background-color: #5a9171;
+    width: 10rem;
+    font-size: 1.5rem;
+    border: white 2px groove;
+    margin: 0 1rem;
+}
+
+.class-button:hover, .class-button:active {
+    background-color: white;
+    color: #5a9171;
+    border: white 2px groove;
+    margin: 0 1rem;
+    transition: 0.3s;
+}
+
+.class-button:focus {
+    border: white 5px groove;
+    box-shadow: 0 0 0 .1rem white;
+    background-color: white;
+    color: #5a9171;
+}
+
+
+/*--------------------------------------- LESSON FEED */
+.column-container-eng {
+    display: flex;
+    background-image: url('/static/images/eng-bg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.column-container-hist {
+    display: flex;
+    background-image: url('/static/images/hist-bg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.column-container-psych {
+    display: flex;
+    background-image: url('/static/images/psych-bg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.left-column {
+    width: 75rem;
+}
+
+.right-column {
+    flex-grow: 1;
+    margin-right: 10rem;
+    height: 100%;
+}
+
+.small-screen-header {
+    display: none;
+    position: fixed;
+    top: 3.5rem;
+    width: 100%;
+    margin: auto;
+    padding: 1.1rem 0 0 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    color: white;
+    text-transform: uppercase;
+    border-bottom: white 2px groove;
+    z-index: 9;
+}
+
+.lesson-feed {
+    position: relative;
+    top: 3rem;
+}
+
+.lesson-list {
+    width: 100% !important;
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 1rem 0 1rem;
+    position: relative;
+}
+
+.card-img-top {
+    border-radius: 10px;
+    border: #F9FAFC 2px solid;
+    width: 75%;
+    justify-content: center;
+}
+
+.card-title, .card-text {
+    color: white;
+    margin-top: 10px;
+}
+
+.card-body {
+    padding: 0 1rem;
+}
+
+.text-muted {
+    margin-top: 1.2rem;
+}
+
+.post-link:hover {
+    text-shadow: 0 0 10px white;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+}
+
+.deadline {
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    left: 50px;
+    background-color: rgb(88, 146, 113);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+    border-radius: 5px;
+}
+
+/*--------------------------------- LESSON POSTS */
+
+.left-column-lesson {
+    width: 27.5rem;
+}
+
+.right-column-lesson {
+    width: 52.5rem;
+
+}
+
+.lesson-content {
+    width: 100%;
+    position: relative;
+    padding-top: 5rem;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.image-flash-lesson {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    left: 5rem;
+    background-color: rgb(88, 146, 113);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+    border-radius: 5px;
+
+}
+
+.comment-container {
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    border-top: white 5px groove;
+    margin-top: 3rem;
+    color: black;
+}
+
+#submitButton {
+    background-color: #5a9171 !important;
+}
+
+#submitButton:hover {
+    transition: 0.3s all ease;
+    color: #212529 !important;
+}
+
+.textarea {
+    font: "Segoe UI", sans-serif;
+}
+
+.form-label {
+    display: none;
+}
+
+.post-title {
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.post-subtitle {
+    margin-left: 5%;
+    color: lightgray;
+}
+
+/**------------------------------------ HOMEWORK */
+.homework-container {
+    position: relative;
+    height: 20rem;
+    top: 5rem;
+    margin-bottom: 15rem;
+}
+
+/*----------------------------------- Buttons */
+.btn-signup,
+.btn-edit {
+    background-color: #5a9171;
+    color: #fff;
+    font-family: 'Indie Flower', cursive;
+    text-wrap: nowrap;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #fff;
+    color: #23BBBB;
+}
+
+.link {
+    color: #23BBBB;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #445261;
+    text-decoration: underline;
+}
+
+.btn-like {
+    color: #bd0000;
+    border: none;
+    background: transparent;
+}
+
+.btn-delete {
+    color: #fff;
+    background: #ba2626;
+    font-family: 'Indie Flower', cursive;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
+}
+
+.sign-out-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 15rem;
+}
+
+.sign-in-container {
+    position: relative;
+    top: 7.5rem;
+}
+
+.sign-up-container {
+    position: relative;
+    top: 4rem;
+}
+
+.faded {
+    color: rgb(113, 113, 113);
+}
+
+.approval {
+    color: rgb(218, 91, 0);
+}
+
+#comment-style {
+    font-style: italic;
+    font-weight: bold;
+}
+
+/*--------------------------------------- MEDIA QUERIES */
+
+/*------------------- Small Screens (max-width: 1023px) */
+@media (max-width: 1023px) {
+
+    .navbar {
+        height: 3.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+
+    .nav-divider {
+        display: none;
+    }
+
+    .nav-link {
+        background-color: rgba(0, 0, 0, 0.95);
+        position: relative;
+        top: 3.5rem;
+        width: 40%;
+        margin: 0 auto;
+        text-align: center;
+        z-index: 9;
+        border: white 2px groove;
+    }
+
+    .footer {
+        bottom: -4rem;
+    }
+
+    .column-container-eng,
+    .column-container-hist,
+    .column-container-psych {
+        background-image: url('/static/images/empty-bg.png');
+    }
+
+    .left-column {
+        display: none;
+    }
+
+    .right-column {
+        width: 100%;
+        margin-right: 80px;
+        margin-left: 80px;
+    }
+
+    .small-screen-header {
+        display: block;
+    }
+
+    .lesson-list {
+        top: 3rem;
+    }
+}
+
+/*------------------- Small Screens (max-width: 1023px) */
+@media (max-width: 426px) {
+    .navbar {
+        height: 6rem;
+    }
+
+    .navbar-toggler {
+        position: relative;
+        top: -1.2rem;
+        right: .5rem
+    }
+
+    .navbar-collapse {
+        position: relative;
+        top: -2rem
+    }
+
+    .welcome-text {
+        margin-top: 0 !important;
+    }
+
+    .homework-container {
+        position: relative;
+        top: 8rem;
+        margin-bottom: 19rem;
+    }
+}
