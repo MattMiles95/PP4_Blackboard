@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Lesson, Subject
+from .models import Lesson, Subject, Comment
 
 
 @admin.register(Subject)
@@ -23,3 +23,11 @@ class LessonAdmin(SummernoteModelAdmin):
     list_filter = ('status', 'created_on')
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content')
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    """
+    Admin interface for the Comment model.
+    """
+    list_display = ('lesson', 'author', 'body', 'created_on')

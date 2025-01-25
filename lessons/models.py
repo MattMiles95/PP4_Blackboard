@@ -17,7 +17,7 @@ class Subject(models.Model):
 
 class Lesson(models.Model):
     """
-    Stores a single blog post entry related to :model:`auth.user`.
+    Stores a single lesson entry related to :model:`auth.user`.
     """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -35,4 +35,22 @@ class Lesson(models.Model):
         return self.created_on.strftime('%d %b. %Y, %I:%M %p')
 
     def __str__(self):
-        return f"{self.title} | Lesson compiled by {self.first_name} {self.last_name}"
+        return f"{self.title} | Lesson created by {self.first_name} {self.last_name}"
+    
+
+class Comment(models.Model):
+    """
+    Stores a single comment entry related to :model:`auth.user`
+    """
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='commenter')
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return f"{self.created_on.strftime('%d/%m/%Y at %H:%M')} - {
+            self.author.first_name} {self.author.last_name} commented on {
+                self.lesson.title}: '{self.body}'"
