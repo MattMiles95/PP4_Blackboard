@@ -1,6 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404, reverse
+from django.views import generic
+from django.contrib import messages
+from django.http import HttpResponseRedirect
+from .models import Lesson, Comment
 
 
-def my_lessons(request):
-    return HttpResponse("Hello, world.")
+def home(request):
+    return render(request, 'lessons/index.html', {})
