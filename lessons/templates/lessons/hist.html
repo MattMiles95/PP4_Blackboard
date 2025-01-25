@@ -1,0 +1,61 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block content %}
+
+<div class="column-container-eng">
+  <div class="small-screen-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center">History with Ms Hinks</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="left-column"></div>
+  <div class="right-column container-fluid">
+    <div class="row">
+      <!-- Lessons Column -->
+      <div class="col-12 mt-3 left lesson-feed">
+        <div class="row">
+          {% for lesson in lesson_list %}
+          <div class="lessons-list col-md-4">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="image-container">
+                  {% if "placeholder" in lesson.featured_image.url %}
+                  <img
+                    src="{% static 'images/default-hist.png' %}"
+                    alt="placeholder image"
+                    class="card-img-top"
+                  />
+                  {% else %}
+                  <img
+                    src="{{ lesson.featured_image.url }}"
+                    alt="{{ lesson.title }}"
+                    class="card-image-top"
+                  />
+                  {% endif %}
+                  <div class="image-flash">
+                    <p class="deadline lesson-font">Deadline: {{ lesson.deadline }}</p>
+                  </div>
+                </div>
+                <a href="{% url 'lesson_detail' lesson.slug %}" class="lesson-link lesson-font">
+                  <h2 class="card-title text-center">{{ lesson.title }}</h2>
+                  <p class="card-text text-center">{{ lesson.excerpt|truncatewords:20 }}</p>
+                </a>
+                <p class="card-text text-muted h6 mb-3">Lesson Posted: {{ lesson.created_on}}</p>
+
+                <hr />
+              </div>
+            </div>
+          </div>
+          {% if forloop.counter|divisibleby:1 %}
+        </div>
+        <div class="row">{% endif %} {% endfor %}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %} 

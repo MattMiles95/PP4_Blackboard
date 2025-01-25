@@ -226,7 +226,7 @@ nav {
     top: 3rem;
 }
 
-.lesson-list {
+.lessons-list {
     width: 100% !important;
     background-color: rgba(0, 0, 0, 0.65);
     padding: 1rem 0 1rem;
@@ -253,7 +253,7 @@ nav {
     margin-top: 1.2rem;
 }
 
-.post-link:hover {
+.lesson-link:hover {
     text-shadow: 0 0 10px white;
     transition: all 0.3s ease;
     text-decoration: none !important;
