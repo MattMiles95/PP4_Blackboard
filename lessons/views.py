@@ -13,7 +13,8 @@ class EnglishLessons(generic.ListView):
     """
     Display a list of :model:`lessons.Lesson` objects.
     """
-    queryset = Lesson.objects.filter(status=1).order_by('-created_on')
+    subject_name = Subject
+    queryset = Lesson.objects.filter(status=1, subject__name='English').order_by('-created_on')
     template_name = 'lessons/eng.html'
 
 
@@ -21,7 +22,8 @@ class HistoryLessons(generic.ListView):
     """
     Display a list of :model:`lessons.Lesson` objects.
     """
-    queryset = Lesson.objects.filter(status=1).order_by('-created_on')
+    subject_name = Subject
+    queryset = Lesson.objects.filter(status=1, subject__name='History').order_by('-created_on')
     template_name = 'lessons/hist.html'
 
 
@@ -29,5 +31,6 @@ class PsychologyLessons(generic.ListView):
     """
     Display a list of :model:`lessons.Lesson` objects.
     """
-    queryset = Lesson.objects.filter(status=1).order_by('-created_on')
+    subject_name = Subject
+    queryset = Lesson.objects.filter(status=1, subject__name='Psychology').order_by('-created_on')
     template_name = 'lessons/psych.html'

@@ -240,6 +240,11 @@ nav {
     justify-content: center;
 }
 
+.image-container img {
+    max-width: 75%;
+    max-height: 25rem;
+}
+
 .card-title, .card-text {
     color: white;
     margin-top: 10px;
@@ -284,6 +289,10 @@ nav {
     background-color: rgb(88, 146, 113);
     box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
     border-radius: 5px;
+}
+
+.no-lessons {
+    height: 100vh;
 }
 
 /*--------------------------------- LESSON POSTS */
@@ -342,12 +351,12 @@ nav {
     display: none;
 }
 
-.post-title {
+.lesson-title {
     margin-top: 10%;
     margin-left: 5%;
 }
 
-.post-subtitle {
+.lesson-subtitle {
     margin-left: 5%;
     color: lightgray;
 }

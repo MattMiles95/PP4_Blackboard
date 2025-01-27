@@ -31,11 +31,14 @@ class Lesson(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     
-    def formatted_date(self):
+    def formatted_created_on(self):
         return self.created_on.strftime('%d %b. %Y, %I:%M %p')
+    
+    def formatted_deadline(self):
+        return self.deadline.strftime('%d %b. %Y, %I:%M %p')
 
     def __str__(self):
-        return f"{self.title} | Lesson created by {self.first_name} {self.last_name}"
+        return f"{self.title} | Lesson created by {self.author}"
     
 
 class Comment(models.Model):
@@ -52,5 +55,5 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.created_on.strftime('%d/%m/%Y at %H:%M')} - {
-            self.author.first_name} {self.author.last_name} commented on {
+            self.author} commented on {
                 self.lesson.title}: '{self.body}'"

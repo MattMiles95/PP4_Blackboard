@@ -1,8 +1,6 @@
-{% extends "base.html" %} 
-{% load static %} 
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
-<div class="column-container-eng">
+<div class="column-container-psych">
   <div class="small-screen-header">
     <div class="container">
       <div class="row">
@@ -17,6 +15,7 @@
     <div class="row">
       <!-- Lessons Column -->
       <div class="col-12 mt-3 left lesson-feed">
+        {% if lesson_list %}
         <div class="row">
           {% for lesson in lesson_list %}
           <div class="lessons-list col-md-4">
@@ -25,7 +24,7 @@
                 <div class="image-container">
                   {% if "placeholder" in lesson.featured_image.url %}
                   <img
-                    src="{% static 'images/default-psych.png' %}"
+                    src="{% static 'images/default-eng.png' %}"
                     alt="placeholder image"
                     class="card-img-top"
                   />
@@ -37,25 +36,51 @@
                   />
                   {% endif %}
                   <div class="image-flash">
-                    <p class="deadline lesson-font">Deadline: {{ lesson.deadline }}</p>
+                    <p class="deadline lesson-font">
+                      Deadline: {{ lesson.deadline|date:"d/m/Y" }}
+                    </p>
                   </div>
                 </div>
-                <a href="{% url 'lesson_detail' lesson.slug %}" class="lesson-link lesson-font">
+                <a href="#" class="lesson-link lesson-font">
                   <h2 class="card-title text-center">{{ lesson.title }}</h2>
-                  <p class="card-text text-center">{{ lesson.excerpt|truncatewords:20 }}</p>
+                  <p class="card-text text-center">{{ lesson.excerpt }}</p>
                 </a>
-                <p class="card-text text-muted h6 mb-3">Lesson Posted: {{ lesson.created_on}}</p>
+                <p class="card-text text-muted h6 mb-3">
+                  Lesson Posted: {{ lesson.created_on|date:"d/m/Y" }} by 
+                  {{ lesson.author }}
+                </p>
 
                 <hr />
               </div>
             </div>
           </div>
-          {% if forloop.counter|divisibleby:1 %}
+          {% endfor %}
         </div>
-        <div class="row">{% endif %} {% endfor %}</div>
+        {% else %}
+        <div class="row no-lessons">
+          <div class="lessons-list col-md-4">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="image-container">
+                  <img
+                    src="{% static 'images/no_lessons.webp' %}"
+                    alt="placeholder image"
+                    class="card-img-top"
+                  />
+                </div>
+                <h2 class="card-title text-center">No lessons posted...</h2>
+                <p class="card-text text-center">
+                  Your teacher is currently hard at work coming up with fun and
+                  engaging lessons. Check back soon!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
       </div>
     </div>
   </div>
 </div>
 
-{% endblock %} 
+{% endblock %}
