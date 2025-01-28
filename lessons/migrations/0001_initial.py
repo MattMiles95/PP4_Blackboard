@@ -27,8 +27,8 @@ class Migration(migrations.Migration):
                 ('updated_on', models.DateTimeField(auto_now=True)),
                 ('deadline', models.DateTimeField()),
                 ('status', models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=0)),
-                ('excerpt', models.TextField(blank=True)),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='lessons', to=settings.AUTH_USER_MODEL)),
+                ('summary', models.TextField(blank=True)),
+                ('teacher', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='lessons', to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

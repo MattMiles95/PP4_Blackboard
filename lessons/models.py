@@ -22,14 +22,14 @@ class Lesson(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='subjects')
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='lessons')
+    teacher = models.ForeignKey(User, on_delete=models.CASCADE, related_name='lessons')
     featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     deadline = models.DateTimeField()
     status = models.IntegerField(choices=STATUS, default=0)
-    excerpt = models.TextField(blank=True)
+    summary = models.TextField(blank=True)
     
     def formatted_created_on(self):
         return self.created_on.strftime('%d %b. %Y, %I:%M %p')
@@ -38,7 +38,7 @@ class Lesson(models.Model):
         return self.deadline.strftime('%d %b. %Y, %I:%M %p')
 
     def __str__(self):
-        return f"{self.title} | Lesson created by {self.author}"
+        return f"{self.title} | Lesson created by {self.teacher}"
     
 
 class Comment(models.Model):
@@ -46,14 +46,16 @@ class Comment(models.Model):
     Stores a single comment entry related to :model:`auth.user`
     """
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='comments')
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='commenter')
+    teacher = models.ForeignKey(User, on_delete=models.CASCADE, related_name='commenter')
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
+
 
     class Meta:
         ordering = ['created_on']
 
+
     def __str__(self):
         return f"{self.created_on.strftime('%d/%m/%Y at %H:%M')} - {
-            self.author} commented on {
+            self.teacher} commented on {
                 self.lesson.title}: '{self.body}'"

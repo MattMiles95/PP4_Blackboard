@@ -43,11 +43,11 @@
                 </div>
                 <a href="#" class="lesson-link lesson-font">
                   <h2 class="card-title text-center">{{ lesson.title }}</h2>
-                  <p class="card-text text-center">{{ lesson.excerpt }}</p>
+                  <p class="card-text text-center">{{ lesson.summary }}</p>
                 </a>
                 <p class="card-text text-muted h6 mb-3">
                   Lesson Posted: {{ lesson.created_on|date:"d/m/Y" }} by 
-                  {{ lesson.author }}
+                  {{ lesson.teacher }}
                 </p>
 
                 <hr />

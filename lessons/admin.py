@@ -18,7 +18,7 @@ class LessonAdmin(SummernoteModelAdmin):
     """
     Admin interface for the Lesson model using Django Admin and Summernote.
     """
-    list_display = ('title', 'subject', 'author', 'status', 'created_on', 'updated_on')
+    list_display = ('title', 'subject', 'teacher', 'status', 'created_on', 'updated_on')
     search_fields = ['title', 'content']
     list_filter = ('status', 'created_on')
     prepopulated_fields = {'slug': ('title',)}
@@ -30,4 +30,4 @@ class CommentAdmin(admin.ModelAdmin):
     """
     Admin interface for the Comment model.
     """
-    list_display = ('lesson', 'author', 'body', 'created_on')
+    list_display = ('lesson', 'teacher', 'body', 'created_on')
