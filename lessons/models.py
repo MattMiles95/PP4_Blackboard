@@ -46,7 +46,7 @@ class Comment(models.Model):
     Stores a single comment entry related to :model:`auth.user`
     """
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='comments')
-    teacher = models.ForeignKey(User, on_delete=models.CASCADE, related_name='commenter')
+    commenter = models.ForeignKey(User, on_delete=models.CASCADE, related_name='commenter')
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 
@@ -57,5 +57,5 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.created_on.strftime('%d/%m/%Y at %H:%M')} - {
-            self.teacher} commented on {
+            self.commenter} commented on {
                 self.lesson.title}: '{self.body}'"

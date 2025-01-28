@@ -34,3 +34,12 @@ class PsychologyLessons(generic.ListView):
     subject_name = Subject
     queryset = Lesson.objects.filter(status=1, subject__name='Psychology').order_by('-created_on')
     template_name = 'lessons/psych.html'
+
+
+def lesson_detail(request, slug):
+    """
+    Display a single :model:`lessons.Lesson` object.
+    """
+    lesson = get_object_or_404(Lesson, slug=slug)
+    comments = Comment.objects.filter(lesson=lesson).order_by('-created_on')
+    return render(request, 'lessons/lesson_detail.html', {'lesson': lesson, 'comments': comments})
