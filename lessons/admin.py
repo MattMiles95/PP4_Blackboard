@@ -30,4 +30,4 @@ class CommentAdmin(admin.ModelAdmin):
     """
     Admin interface for the Comment model.
     """
-    list_display = ('lesson', 'teacher', 'body', 'created_on')
+    list_display = ('lesson', 'commenter', 'body', 'created_on')

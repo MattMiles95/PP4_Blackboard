@@ -7,4 +7,5 @@ urlpatterns = [
     path('lessons/eng', views.EnglishLessons.as_view(), name='eng'),
     path('lessons/hist', views.HistoryLessons.as_view(), name='hist'),
     path('lessons/psych', views.PsychologyLessons.as_view(), name='psych'),
+    path('<slug:slug>/', views.lesson_detail, name='lesson_detail'),
     ]

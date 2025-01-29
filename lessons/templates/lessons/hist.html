@@ -41,7 +41,7 @@
                     </p>
                   </div>
                 </div>
-                <a href="#" class="lesson-link lesson-font">
+                <a href="{% url 'lesson_detail' lesson.slug %}" class="lesson-link lesson-font">
                   <h2 class="card-title text-center">{{ lesson.title }}</h2>
                   <p class="card-text text-center">{{ lesson.summary }}</p>
                 </a>

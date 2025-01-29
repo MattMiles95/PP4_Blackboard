@@ -1,0 +1,61 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="column-container">
+  <div class="left-column-lesson"></div>
+  <div class="right-column-lesson container-fluid">
+    <div class="row">
+      <!-- Lesson Column -->
+      <div class="col-12 mt-3 left">
+        <div class="row">
+          <div class="lesson-content col-md-4">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="image-container">
+                  {% if "placeholder" in lesson.featured_image.url %}
+                  <img
+                    src="{% static 'images/default.jpg' %}"
+                    alt="placeholder image"
+                    class="card-img-top"
+                  />
+                  {% else %}
+                  <img
+                    src="{{ lesson.featured_image.url }}"
+                    alt="{{ lesson.title }}"
+                    class="card-image-top"
+                  />
+                  {% endif %}
+                  <div class="image-flash-lesson">
+                    <p class="deadline lesson-font">
+                      Deadline: {{ lesson.deadline }}
+                    </p>
+                  </div>
+                </div>
+                <div class="card-body lesson-font lesson-text">
+                  <h2 class="card-title text-center">{{ lesson.title }}</h2>
+                  <article class="card-text">
+                    {{ lesson.content | safe }}
+                  </article>
+                </div>
+                <hr />
+                <p class="card-text text-muted h6">
+                  Lesson Posted: {{ lesson.created_on}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %} 
+
+{% block extras %}
+<script src="{% static 'js/comments.js' %}"></script>
+{% endblock %}
