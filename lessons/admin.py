@@ -18,9 +18,9 @@ class LessonAdmin(SummernoteModelAdmin):
     """
     Admin interface for the Lesson model using Django Admin and Summernote.
     """
-    list_display = ('title', 'subject', 'teacher', 'status', 'created_on', 'updated_on')
+    list_display = ('title', 'subject', 'teacher', 'lesson_status', 'created_on', 'updated_on')
     search_fields = ['title', 'content']
-    list_filter = ('status', 'created_on')
+    list_filter = ('lesson_status', 'created_on')
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content')
 

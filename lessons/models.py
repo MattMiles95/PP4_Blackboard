@@ -2,8 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-STATUS = ((0, "Draft"), (1, "Published"))
-
+LESSON_STATUS = ((0, "Draft"), (1, "Published"))
+COMMENT_STATUS = ((0, "Published"), (1, "Reported"))
 
 class Subject(models.Model):
     """
@@ -28,7 +28,7 @@ class Lesson(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     deadline = models.DateTimeField()
-    status = models.IntegerField(choices=STATUS, default=0)
+    lesson_status = models.IntegerField(choices=LESSON_STATUS, default=0)
     summary = models.TextField(blank=True)
     
     def formatted_created_on(self):
@@ -49,6 +49,7 @@ class Comment(models.Model):
     commenter = models.ForeignKey(User, on_delete=models.CASCADE, related_name='commenter')
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
+    comment_status = models.IntegerField(choices=COMMENT_STATUS, default=0)
 
 
     class Meta:
