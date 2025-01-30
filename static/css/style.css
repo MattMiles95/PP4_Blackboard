@@ -31,8 +31,16 @@ hr {
     font-family: 'Lexend', sans-serif;
 }
 
+.shrink-font {
+    font-size: .8rem;
+}
+
 .form-container {
     margin-bottom: 5rem;
+}
+
+.highlight {
+    color: #ffd900;
 }
 
 /*--------------------------------------- BASE TEMPLATE */
@@ -53,8 +61,9 @@ nav {
 }
 
 .navbar-brand:hover {
+    transition: 0.3s;
     text-shadow: 0 0 5px white !important;
-    transition: 0.1s;
+    font-size: 1.6rem;
 }
 
 .nav-link {
@@ -64,8 +73,9 @@ nav {
 }
 
 .nav-link:hover {
-    text-shadow: 0 0 5px white !important;
-    transition: 0.1s;
+    transition: 0.3s;
+    font-size: 1.3rem;
+    text-decoration: underline !important;
 }
 
 .navbar-dark, .navbar-toggler {
@@ -261,7 +271,6 @@ nav {
 .lesson-link:hover {
     text-shadow: 0 0 10px white;
     transition: all 0.3s ease;
-    text-decoration: none !important;
 }
 
 .deadline {
@@ -401,8 +410,8 @@ nav {
 
 .link:hover,
 .link:active {
-    color: #445261;
-    text-decoration: underline;
+    color: #23BBBB;
+    text-decoration: underline !important;
 }
 
 .btn-like {
