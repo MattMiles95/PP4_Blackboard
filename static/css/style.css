@@ -357,9 +357,10 @@ nav {
     background-color: #5a9171 !important;
 }
 
-#submitButton:hover {
+#submitButton:hover, #submitButton:active {
     transition: 0.3s all ease;
-    color: #212529 !important;
+    color: #5a9171 !important;
+    background-color: #fff !important;
 }
 
 .textarea {
@@ -398,7 +399,9 @@ nav {
 }
 
 .btn-signup:hover,
-.btn-signup:active {
+.btn-signup:active,
+.btn-edit:hover,
+.btn-edit:active {
     background-color: #fff;
     color: #23BBBB;
 }
@@ -414,23 +417,16 @@ nav {
     text-decoration: underline !important;
 }
 
-.btn-like {
-    color: #bd0000;
-    border: none;
-    background: transparent;
-}
-
 .btn-delete {
     color: #fff;
     background: #ba2626;
     font-family: 'Indie Flower', cursive;
 }
 
-.btn-like:hover,
-.btn-like:active {
+.btn-delete:hover,
+.btn-delete:active {
     color: #E84610;
-    background: transparent;
-    border: none;
+    background: #fff;
 }
 
 .sign-out-container {
