@@ -10,4 +10,5 @@ urlpatterns = [
     path('<slug:slug>/', views.lesson_detail, name='lesson_detail'),
     path('<slug:slug>/edit_comment/<int:comment_id>/', views.comment_edit, name='comment_edit'),
     path('<slug:slug>/delete_comment/<int:comment_id>/', views.comment_delete, name='comment_delete'),
+    path('<slug:slug>/report_comment/<int:comment_id>/', views.comment_report, name='comment_report'),
     ]

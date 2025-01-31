@@ -6,7 +6,6 @@ from .models import Subject, Lesson, Comment
 from .forms import CommentForm
 
 
-
 def home(request):
     return render(request, "lessons/index.html", {})
 
@@ -98,7 +97,7 @@ def comment_edit(request, slug, comment_id):
             comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(request, messages.ERROR, 'Hmm, something went wrong...')
 
     return HttpResponseRedirect(reverse('lesson_detail', args=[slug]))
 
@@ -115,6 +114,25 @@ def comment_delete(request, slug, comment_id):
         comment.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(request, messages.ERROR, 'Hmm, something went wrong...')
 
     return HttpResponseRedirect(reverse('lesson_detail', args=[slug]))
+
+
+def comment_report(request, slug, comment_id):
+    """
+    Report an individual comment.
+    """
+    queryset = Lesson.objects.filter(lesson_status=1)
+    lesson = get_object_or_404(queryset, slug=slug)
+    comment = get_object_or_404(Comment, pk=comment_id)
+    
+    if comment.commenter != request.user:
+        comment.lesson = lesson
+        comment.comment_status = 1
+        comment.save()
+        messages.add_message(request, messages.SUCCESS, 'Comment reported to teacher!')
+    else:
+        messages.add_message(request, messages.ERROR, "Hmm, something went wrong...")
+
+    return HttpResponseRedirect(reverse('lesson_detail', args=[slug],))

@@ -7,6 +7,10 @@ const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
 
+const reportModal = new bootstrap.Modal(document.getElementById("reportModal"));
+const reportButtons = document.getElementsByClassName("btn-warning");
+const reportConfirm = document.getElementById("reportConfirm");
+
 /**
 * Initializes edit functionality for the provided edit buttons.
 * 
@@ -42,5 +46,23 @@ for (let button of deleteButtons) {
     let commentId = e.target.getAttribute("data-comment_id");
     deleteConfirm.href = `delete_comment/${commentId}`;
     deleteModal.show();
+  });
+}
+
+/**
+* Initializes report functionality for the provided report buttons.
+* 
+* For each button in the `reportButtons` collection:
+* - Retrieves the associated comment's ID upon click.
+* - Updates the `reportConfirm` link's href to point to the 
+* report endpoint for the specific comment.
+* - Displays a confirmation modal (`reportModal`) to prompt 
+* the user for confirmation before reporting.
+*/
+for (let button of reportButtons) {
+  button.addEventListener("click", (e) => {
+    let commentId = e.target.getAttribute("data-comment_id");
+    reportConfirm.href = `report_comment/${commentId}`;
+    reportModal.show();
   });
 }

@@ -90,11 +90,16 @@
 
           <!-- Delete & Edit Comment Buttons -->
           {% if user.is_authenticated and comment.commenter == user %}
-          <button class="btn btn-delete" data-comment_id="{{ comment.id }}">
+          <button class="btn btn-delete btn-comment" data-comment_id="{{ comment.id }}">
             Delete
           </button>
-          <button class="btn btn-edit" data-comment_id="{{ comment.id }}">
+          <button class="btn btn-edit btn-comment" data-comment_id="{{ comment.id }}">
             Edit
+          </button>
+          {% endif %}
+          {% if user.is_authenticated and comment.commenter != user %}
+          <button class="btn btn-warning btn-comment" data-comment_id="{{ comment.id }}">
+            Report
           </button>
           {% endif %}
         </div>
@@ -161,6 +166,42 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- Report confirmation modal -->
+<div
+class="modal fade"
+id="reportModal"
+tabindex="-1"
+aria-labelledby="reportModalLabel"
+aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="reportModalLabel">Report this comment to the teacher?</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">
+      Are you sure you want to report this comment for being inappropriate / abusive? The comment 
+      will be submitted to your teacher for their review.
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-bs-dismiss="modal">
+        Close
+      </button>
+      <a id="reportConfirm" href="#" class="btn btn-warning">Report</a>
+    </div>
+  </div>
+</div>
+</div>
 </div>
 
 {% endblock content %} {% block extras %}
