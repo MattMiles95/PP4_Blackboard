@@ -88,7 +88,7 @@
           <p class="reported">This comment has been reported and is pending approval by a teacher.</p>
           {% endif %}
 
-          <!-- Delete & Edit Comment Buttons -->
+          <!-- Delete, Edit & Report Comment Buttons -->
           {% if user.is_authenticated and comment.commenter == user %}
           <button class="btn btn-delete btn-comment" data-comment_id="{{ comment.id }}">
             Delete
@@ -197,7 +197,7 @@ aria-hidden="true">
         data-bs-dismiss="modal">
         Close
       </button>
-      <a id="reportConfirm" href="#" class="btn btn-warning">Report</a>
+      <a id="reportConfirm" href="#" class="btn btn-danger">Report</a>
     </div>
   </div>
 </div>

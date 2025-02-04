@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Subject, Lesson, Comment
 from .forms import CommentForm
 
@@ -10,7 +12,7 @@ def home(request):
     return render(request, "lessons/index.html", {})
 
 
-class EnglishLessons(generic.ListView):
+class EnglishLessons(LoginRequiredMixin, generic.ListView):
     """
     Display a list of :model:`lessons.Lesson` objects.
     """
@@ -22,7 +24,7 @@ class EnglishLessons(generic.ListView):
     template_name = "lessons/eng.html"
 
 
-class HistoryLessons(generic.ListView):
+class HistoryLessons(LoginRequiredMixin, generic.ListView):
     """
     Display a list of :model:`lessons.Lesson` objects.
     """
@@ -34,7 +36,7 @@ class HistoryLessons(generic.ListView):
     template_name = "lessons/hist.html"
 
 
-class PsychologyLessons(generic.ListView):
+class PsychologyLessons(LoginRequiredMixin, generic.ListView):
     """
     Display a list of :model:`lessons.Lesson` objects.
     """
@@ -46,6 +48,7 @@ class PsychologyLessons(generic.ListView):
     template_name = "lessons/psych.html"
 
 
+@login_required
 def lesson_detail(request, slug):
     """
     Display a single :model:`lessons.Lesson` object.

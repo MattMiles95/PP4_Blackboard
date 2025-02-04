@@ -38,7 +38,7 @@ class Lesson(models.Model):
         return self.deadline.strftime('%d %b. %Y, %I:%M %p')
 
     def __str__(self):
-        return f"{self.title} | Lesson created by {self.teacher}"
+        return self.title
     
 
 class Comment(models.Model):
