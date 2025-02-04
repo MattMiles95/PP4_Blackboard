@@ -6,7 +6,7 @@
 {% url 'hist' as hist_url %}
 {% url 'psych' as psych_url %}
 
-{% url 'homework' as homework_url %}
+{% url 'homework_dashboard' as homework_dashboard_url %}
 
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
@@ -77,7 +77,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page"
-                            href="{% url 'homework' %}">Homework</a>
+                            href="{% url 'homework_dashboard' %}">Homework</a>
                     </li>
                     <li class="nav-item nav-divider">
                         <span class="nav-link">|</span>

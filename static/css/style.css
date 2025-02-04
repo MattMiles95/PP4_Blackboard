@@ -400,7 +400,8 @@ nav {
 
 /*--------------------------------------- BUTTONS */
 .btn-signup,
-.btn-edit {
+.btn-edit,
+.btn-submit {
     background-color: #5a9171;
     color: #fff;
     font-family: 'Indie Flower', cursive;
@@ -410,7 +411,9 @@ nav {
 .btn-signup:hover,
 .btn-signup:active,
 .btn-edit:hover,
-.btn-edit:active {
+.btn-edit:active,
+.btn-submit:hover,
+.btn-submit:active {
     background-color: #fff;
     color: #23BBBB;
 }
@@ -426,11 +429,11 @@ nav {
     background-color: #000000;
     color: #ffc107;}
 
-#submitButton {
+.submit-btn {
     background-color: #5a9171 !important;
 }
 
-#submitButton:hover, #submitButton:active {
+.submit-btn:hover, .submit-btn:active {
     transition: 0.3s all ease;
     color: #5a9171 !important;
     background-color: #fff !important;
