@@ -4,24 +4,73 @@
 
 {% block content %}
 <div class="container homework-container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title mb-0">Submit Homework - {{ selected_subject }}</h3>
-                </div>
-                
-                <div class="card-body">
-                    <form method="POST" class="readable-font">
-                        {{ form|crispy }}
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-submit float-end">
-                            Submit Homework
-                        </button>
-                    </form>
-                </div>
-            </div>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title mb-0">
+            Submit Homework - {{ selected_subject }}
+          </h3>
         </div>
+
+        <div class="card-body">
+          <form method="POST" class="readable-font">
+            {{ form|crispy }} {% csrf_token %}
+            <button type="submit"
+            class="btn btn-submit float-end">
+              Submit Homework
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Submission confirmation modal -->
+  <div
+    class="modal fade"
+    id="submissionModal"
+    tabindex="-1"
+    aria-labelledby="submissionModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="submissionModalLabel">
+            Submit this homework to your teacher?
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+            Once submitted, homework can't be edited. Are you sure you're ready to submit?
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cancel
+          </button>
+          <button 
+                id="submissionConfirm"
+                class="btn btn-submission"
+                data-bs-dismiss="modal"
+            >
+                Submit Homework
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+{% endblock content %} {% block extras %}
+<script src="{% static 'js/homework.js' %}"></script>
 {% endblock %}

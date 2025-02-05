@@ -1,5 +1,6 @@
 from django.views.generic import View
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from lessons.models import Subject, Lesson
 from .forms import HomeworkSubmissionForm
@@ -34,8 +35,12 @@ class HomeworkSubmissionView(LoginRequiredMixin, View):
             homework.student = request.user
             homework.subject_id = Subject.objects.get(name=subject).id
             homework.save()
+            messages.add_message(request, messages.SUCCESS, 'Homework submitted, good job!')
             return redirect('homework_dashboard')
-        return render(request, 'homework/homework_submission.html', {
+        else:
+            messages.add_message(request, messages.ERROR, 'Hmm, something went wrong...')
+            
+        return render(request, 'homework/homework_dashboard.html', {
             'form': form,
             'selected_subject': subject
         })
