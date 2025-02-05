@@ -12,7 +12,7 @@
             <div class="btn-group" role="group">
                 {% for subject in subjects %}
                 <a aria-current="page" href="{% url 'homework_submission' subject.name %}">
-                    <button type="button" class="btn btn-primary me-2 class-button">{{ subject.name }}</button>
+                    <button type="button" class="btn btn-primary me-2 homework-class-btn">{{ subject.name }}</button>
                 </a>
                 {% endfor %}
             </div>
