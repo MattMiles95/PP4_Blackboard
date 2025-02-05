@@ -25,11 +25,11 @@ class Lesson(models.Model):
     teacher = models.ForeignKey(User, on_delete=models.CASCADE, related_name='lessons')
     featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
+    summary = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     deadline = models.DateTimeField()
     lesson_status = models.IntegerField(choices=LESSON_STATUS, default=0)
-    summary = models.TextField(blank=True)
     
     def formatted_created_on(self):
         return self.created_on.strftime('%d %b. %Y, %I:%M %p')

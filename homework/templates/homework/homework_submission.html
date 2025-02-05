@@ -12,8 +12,8 @@
                 </div>
                 
                 <div class="card-body">
-                    <form method="POST" enctype="multipart/form-data">
-                        {% crispy form %}
+                    <form method="POST" class="readable-font">
+                        {{ form|crispy }}
                         {% csrf_token %}
                         <button type="submit" class="btn btn-submit float-end">
                             Submit Homework
