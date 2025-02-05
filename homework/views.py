@@ -17,7 +17,9 @@ class HomeworkDashboardView(LoginRequiredMixin, View):
 
 class HomeworkSubmissionView(LoginRequiredMixin, View):
     def get(self, request, subject):
-        lessons = Lesson.objects.filter(subject__name=subject)
+        lessons = Lesson.objects.filter(
+            subject__name=subject,
+            lesson_status=1)
         form = HomeworkSubmissionForm()
         form.fields['lesson'].queryset = lessons
         return render(request, 'homework/homework_submission.html', {
