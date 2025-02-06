@@ -10,7 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle initial submission click
     submitButton.addEventListener('click', function(e) {
-        submissionModal.show();
+        if (form.checkValidity()) {
+            submissionModal.show();
+            }
+        else {
+            alert("Please fill out all required fields.");
+        }
     });
     
     // Handle modal confirmation

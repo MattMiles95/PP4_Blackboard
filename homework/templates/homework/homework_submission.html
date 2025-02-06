@@ -16,7 +16,9 @@
         <!-- Homework Submission form -->
         <div class="card-body">
           <form method="POST" class="readable-font">
-            {{ form|crispy }} {% csrf_token %}
+            {{ form|crispy }}
+            {% csrf_token %}
+            
             <button type="submit"
             class="btn btn-submit btn-homework float-end">
               Submit Homework
