@@ -1,6 +1,10 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
 
+{% block content %}
 <div class="column-container-hist">
+
+  <!-- Header Visible on Small Screens -->
   <div class="small-screen-header">
     <div class="container">
       <div class="row">
@@ -13,6 +17,7 @@
   <div class="left-column"></div>
   <div class="right-column container-fluid">
     <div class="row">
+      
       <!-- Lessons Column -->
       <div class="col-12 mt-3 left lesson-feed">
         {% if lesson_list %}
@@ -56,7 +61,9 @@
           </div>
           {% endfor %}
         </div>
+
         {% else %}
+        <!-- Default display if no lessons in lessons.Subject -->
         <div class="row no-lessons">
           <div class="lessons-list col-md-4">
             <div class="card mb-4">
@@ -82,5 +89,4 @@
     </div>
   </div>
 </div>
-
 {% endblock %}
