@@ -122,7 +122,7 @@
           {{ comment_form | crispy }} 
           {% csrf_token %}
 
-          <button id="submitComment" type="submit" class="btn btn-signup submit-btn btn-lg">
+          <button id="submitComment" type="submit" class="btn btn-signup btn-submit btn-lg">
             Submit
           </button>
         </form>
@@ -171,11 +171,12 @@
 
 <!-- Report confirmation modal -->
 <div
-class="modal fade"
-id="reportModal"
-tabindex="-1"
-aria-labelledby="reportModalLabel"
-aria-hidden="true">
+  class="modal fade"
+  id="reportModal"
+  tabindex="-1"
+  aria-labelledby="reportModalLabel"
+  aria-hidden="true"
+>
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="modal-header">

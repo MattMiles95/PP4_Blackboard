@@ -18,7 +18,7 @@
           <form method="POST" class="readable-font">
             {{ form|crispy }} {% csrf_token %}
             <button type="submit"
-            class="btn btn-submit float-end">
+            class="btn btn-submit btn-homework float-end">
               Submit Homework
             </button>
           </form>
@@ -40,7 +40,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="submissionModalLabel">
-            Submit this homework to your teacher?
+            Submit homework?
           </h5>
           <button
             type="button"
@@ -62,7 +62,7 @@
           </button>
           <button 
                 id="submissionConfirm"
-                class="btn btn-submission"
+                class="btn btn-submission btn-submit btn-homework"
                 data-bs-dismiss="modal"
             >
                 Submit Homework

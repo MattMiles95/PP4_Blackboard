@@ -76,16 +76,6 @@ hr {
     background-color: #000000;
     color: #ffc107;}
 
-.submit-btn {
-    background-color: #5a9171 !important;
-}
-
-.submit-btn:hover, .submit-btn:active {
-    transition: 0.3s all ease;
-    color: #5a9171 !important;
-    background-color: #fff !important;
-}
-
 .btn-delete {
     color: #fff;
     background: #ba2626;
@@ -201,8 +191,11 @@ nav {
     transform: translate(-50%, -50%);
     z-index: 10;
     font-size: 1.5rem;
-    border: #79b390 2px groove;
     box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px;
+}
+
+.alert-danger {
+    border: #842029 2px groove;
 }
 
 .modal-dialog {
@@ -355,7 +348,7 @@ nav {
     bottom: 5%;
     min-width: 30%;
     left: 50px;
-    background-color: rgb(88, 146, 113);
+    background-color: #208fd9;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
     border-radius: 5px;
 }
@@ -396,7 +389,7 @@ nav {
     bottom: 5%;
     min-width: 30%;
     left: 17%;
-    background-color: rgb(88, 146, 113);
+    background-color: #208fd9;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
     border-radius: 5px;
 
@@ -466,6 +459,17 @@ nav {
 
 #id_student_notes {
     height: 7.5rem;
+}
+
+.btn-homework {
+    background-color: #208fd9;
+}
+
+.btn-homework:hover,
+.btn-homework:active {
+    background-color: white;
+    color: #208fd9;
+    transition: 0.3s;
 }
 
 /*----------------------------------------------- AUTHENTICATION */
