@@ -5,6 +5,7 @@ from cloudinary.models import CloudinaryField
 LESSON_STATUS = ((0, "Draft"), (1, "Published"))
 COMMENT_STATUS = ((0, "Published"), (1, "Reported"))
 
+
 class Subject(models.Model):
     """
     Creates a single subject.
@@ -51,10 +52,8 @@ class Comment(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     comment_status = models.IntegerField(choices=COMMENT_STATUS, default=0)
 
-
     class Meta:
         ordering = ['created_on']
-
 
     def __str__(self):
         return f"{self.created_on.strftime('%d/%m/%Y at %H:%M')} - {

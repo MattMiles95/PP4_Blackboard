@@ -2,7 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 from lessons.models import Lesson, Subject
 
+
 class Homework(models.Model):
+    """
+    Stores a single homework submission related to :model:`auth.user`.
+    """
     student = models.ForeignKey(User, on_delete=models.CASCADE)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, )

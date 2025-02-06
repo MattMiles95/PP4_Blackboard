@@ -1,7 +1,11 @@
 from django import forms
 from .models import Homework
 
+
 class HomeworkSubmissionForm(forms.ModelForm):
+    """
+    Form for submitting homework.
+    """
     class Meta:
         model = Homework
         fields = ['lesson', 'content', 'student_notes']
