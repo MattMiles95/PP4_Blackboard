@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle modal confirmation
     document.getElementById('submissionConfirm').addEventListener('click', function(e) {
-        // Submit the form programmatically
         form.submit();
     });
 });

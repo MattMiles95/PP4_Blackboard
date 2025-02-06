@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lexend:wght@100..900&family=Patrick+Hand&display=swap');
-/*/*--------------------------------------- GLOBAL */
+
+/*----------------------------------------------- GLOBAL */
+
+/*-------------------------- ELEMENTS & CLASSES */
 body {
     color: white;
     font-family: 'Indie Flower', cursive;
@@ -23,6 +26,79 @@ hr {
     z-index: 1;
 }
 
+.center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-wrap: nowrap;
+    position: relative;
+    top: 10rem;
+}
+
+.container-flex {
+    margin: 0;
+}
+
+.form-label {
+    display: none;
+}
+
+/*-------------------------- BUTTONS */
+.btn-signup,
+.btn-edit,
+.btn-submit {
+    background-color: #5a9171;
+    color: #fff;
+    font-family: 'Indie Flower', cursive;
+    text-wrap: nowrap;
+}
+
+.btn-signup:hover,
+.btn-signup:active,
+.btn-edit:hover,
+.btn-edit:active,
+.btn-submit:hover,
+.btn-submit:active {
+    background-color: #fff;
+    color: #23BBBB;
+}
+
+.btn-comment {
+    font-size: .8rem;
+    line-height: 1;
+    margin-top: -1.5rem;
+}
+
+.btn-warning:hover,
+.btn-warning:active {
+    background-color: #000000;
+    color: #ffc107;}
+
+.submit-btn {
+    background-color: #5a9171 !important;
+}
+
+.submit-btn:hover, .submit-btn:active {
+    transition: 0.3s all ease;
+    color: #5a9171 !important;
+    background-color: #fff !important;
+}
+
+.btn-delete {
+    color: #fff;
+    background: #ba2626;
+    font-family: 'Indie Flower', cursive;
+}
+
+.btn-delete:hover,
+.btn-delete:active {
+    color: #E84610;
+    background: #fff;
+}
+
+/*-------------------------- FONTS */
 .readable-font {
     font-family: 'Patrick Hand', cursive !important;
 }
@@ -35,15 +111,9 @@ hr {
     font-size: .8rem;
 }
 
-.form-container {
-    margin-bottom: 5rem;
-}
+/*----------------------------------------------- BASE TEMPLATE */
 
-.highlight {
-    color: #ffd900;
-}
-
-/*--------------------------------------- BASE TEMPLATE */
+/*-------------------------- NAVIGATION */
 nav {
     z-index: 9;
     padding: 0 0 !important;
@@ -101,6 +171,7 @@ nav {
     box-shadow: none;
 }
 
+/*-------------------------- HEADER */
 .welcome-text {
     font-size: 1.2rem;
     color: #84d5a6;
@@ -113,6 +184,7 @@ nav {
     color: #d5aa84c0;
 }
 
+/*-------------------------- FOOTER */
 .footer {
     background-color: black;
     border-top: white 2px groove;
@@ -121,6 +193,7 @@ nav {
     z-index: 9;
 }
 
+/*-------------------------- DJANGO MESSAGES */
 .msg {
     position: fixed;
     top: 60%;
@@ -141,22 +214,7 @@ nav {
     display: none;
 }
 
-/*--------------------------------------- HOMEPAGE */
-.center-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    text-wrap: nowrap;
-    position: relative;
-    top: 10rem;
-}
-
-.container-flex {
-    margin: 0;
-}
-
+/*----------------------------------------------- INDEX.html */
 .class-btn {
     background-color: #5a9171;
     width: 10rem;
@@ -178,29 +236,7 @@ nav {
     color: #5a9171;
 }
 
-.homework-class-btn {
-    background-color: #208fd9;
-    width: 10rem;
-    font-size: 1.5rem;
-    border: white 2px groove;
-    margin: .5rem 2rem;
-}
-
-.homework-class-btn:hover, .homework-class-btn:active {
-    background-color: white;
-    color: #208fd9;
-    transition: 0.3s;
-}
-
-.homework-class-btn:focus {
-    border: white 5px groove;
-    box-shadow: 0 0 0 .1rem white;
-    background-color: white;
-    color: #208fd9;
-}
-
-
-/*--------------------------------------- LESSON FEED */
+/*----------------------------------------------- LESSON FEED */
 .column-container-eng {
     display: flex;
     background-image: url('/static/images/eng-bg.png');
@@ -328,8 +364,7 @@ nav {
     height: 100vh;
 }
 
-/*--------------------------------- LESSON_DETAIL */
-
+/*----------------------------------------------- LESSON_DETAIL.html */
 .left-column-lesson {
     width: 27.5rem;
 }
@@ -383,19 +418,6 @@ nav {
     margin: .5rem;
 }
 
-.textarea {
-    font: "Segoe UI", sans-serif;
-}
-
-.form-label {
-    display: none;
-}
-
-.lesson-title {
-    margin-top: 10%;
-    margin-left: 5%;
-}
-
 .lesson-subtitle {
     margin-left: 5%;
     color: lightgray;
@@ -409,7 +431,29 @@ nav {
     color: rgb(255, 0, 0);
 }
 
-/**------------------------------------ HOMEWORK */
+/*----------------------------------------------- HOMEWORK_DASHBOARD.html */
+.homework-class-btn {
+    background-color: #208fd9;
+    width: 10rem;
+    font-size: 1.5rem;
+    border: white 2px groove;
+    margin: .5rem 2rem;
+}
+
+.homework-class-btn:hover, .homework-class-btn:active {
+    background-color: white;
+    color: #208fd9;
+    transition: 0.3s;
+}
+
+.homework-class-btn:focus {
+    border: white 5px groove;
+    box-shadow: 0 0 0 .1rem white;
+    background-color: white;
+    color: #208fd9;
+}
+
+/*----------------------------------------------- HOMEWORK_SUBMISSION.html */
 .homework-container {
     position: relative;
     top: 5rem;
@@ -424,60 +468,7 @@ nav {
     height: 7.5rem;
 }
 
-/*--------------------------------------- BUTTONS */
-.btn-signup,
-.btn-edit,
-.btn-submit {
-    background-color: #5a9171;
-    color: #fff;
-    font-family: 'Indie Flower', cursive;
-    text-wrap: nowrap;
-}
-
-.btn-signup:hover,
-.btn-signup:active,
-.btn-edit:hover,
-.btn-edit:active,
-.btn-submit:hover,
-.btn-submit:active {
-    background-color: #fff;
-    color: #23BBBB;
-}
-
-.btn-comment {
-    font-size: .8rem;
-    line-height: 1;
-    margin-top: -1.5rem;
-}
-
-.btn-warning:hover,
-.btn-warning:active {
-    background-color: #000000;
-    color: #ffc107;}
-
-.submit-btn {
-    background-color: #5a9171 !important;
-}
-
-.submit-btn:hover, .submit-btn:active {
-    transition: 0.3s all ease;
-    color: #5a9171 !important;
-    background-color: #fff !important;
-}
-
-.btn-delete {
-    color: #fff;
-    background: #ba2626;
-    font-family: 'Indie Flower', cursive;
-}
-
-.btn-delete:hover,
-.btn-delete:active {
-    color: #E84610;
-    background: #fff;
-}
-
-/*--------------------------------------- AUTHENTICATION */
+/*----------------------------------------------- AUTHENTICATION */
 
 .link {
     color: #23BBBB;
@@ -510,9 +501,17 @@ nav {
     top: 4rem;
 }
 
-/*--------------------------------------- MEDIA QUERIES */
+.form-container {
+    margin-bottom: 5rem;
+}
 
-/*------------------- Small Screens (max-width: 1023px) */
+.highlight {
+    color: #ffd900;
+}
+
+/*----------------------------------------------- MEDIA QUERIES */
+
+/*-------------------------- SMALL SCREENS (max-width: 1023px) */
 @media (max-width: 1023px) {
 
     .navbar-brand {
@@ -567,7 +566,7 @@ nav {
     }
 }
 
-/*------------------- Tablets (max-width: 426px) */
+/*-------------------------- TABLETS (max-width: 426px) */
 @media (max-width: 426px) {
     .navbar {
         height: 7rem;
