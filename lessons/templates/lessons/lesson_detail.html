@@ -10,7 +10,7 @@
     <div class="row">
       
       <!-- Lesson Column -->
-      <div class="col-12 mt-3 left">
+      <div class="col-12 mt-3 left container-lesson-detail">
         <div class="row">
           <div class="lesson-content col-md-4">
             <div class="card mb-4">
@@ -35,6 +35,9 @@
                     </p>
                   </div>
                 </div>
+                <p class="deadline-ss">
+                  Deadline: {{ lesson.deadline }}
+                </p>
                 <div class="card-body lesson-font lesson-text">
                   <h2 class="card-title text-center">{{ lesson.title }}</h2>
                   <article class="card-text">
@@ -70,7 +73,7 @@
 
   <!-- Comments -->
   <div class="row">
-    <div class="col-md-8 card mb-4 mt-3">
+    <div class="col-md-8 card mb-4 mt-3 comment-box">
       <h3>Comments:</h3>
       <div class="card-body readable-font">
         {% for comment in comments %}
@@ -109,7 +112,7 @@
     </div>
 
     <!-- Creating New Comments -->
-    <div class="col-md-4 card md-4 mt-3">
+    <div class="col-md-4 card md-4 mt-3 comment-form-box">
       <div class="card-body">
         {% if user.is_authenticated %}
         <h3>Leave a comment:</h3>

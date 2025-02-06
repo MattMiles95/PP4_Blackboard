@@ -32,7 +32,7 @@ hr {
     justify-content: center;
     align-items: center;
     text-align: center;
-    text-wrap: nowrap;
+    text-wrap: wrap;
     position: relative;
     top: 10rem;
 }
@@ -88,6 +88,10 @@ hr {
     background: #fff;
 }
 
+.btn-group {
+    text-wrap: wrap;
+}
+
 /*-------------------------- FONTS */
 .readable-font {
     font-family: 'Patrick Hand', cursive !important;
@@ -105,7 +109,7 @@ hr {
 
 /*-------------------------- NAVIGATION */
 nav {
-    z-index: 9;
+    z-index: 99;
     padding: 0 0 !important;
 }
 
@@ -181,6 +185,7 @@ nav {
     position: relative;
     bottom: -2rem;
     z-index: 9;
+    width: 100%;
 }
 
 /*-------------------------- DJANGO MESSAGES */
@@ -287,11 +292,11 @@ nav {
 .lesson-feed {
     position: relative;
     top: 3rem;
+    background-color: rgba(0, 0, 0, 0.65);
 }
 
 .lessons-list {
     width: 100% !important;
-    background-color: rgba(0, 0, 0, 0.65);
     padding: 1rem 0 1rem;
     position: relative;
 }
@@ -369,13 +374,13 @@ nav {
 .lesson-content {
     width: 100%;
     position: relative;
-    padding: 5rem 3rem 1.5rem;
+    padding: 5rem 1.5rem 1.5rem;
     background-color: rgba(0, 0, 0, 0.65);
 }
 
 .lesson-text {
     margin-top: 2rem;
-    border-radius: 5%;
+    border-radius: 2%;
     padding: 1rem 2rem;
     background-color: rgba(45, 45, 45, 0.4);
 }
@@ -398,10 +403,8 @@ nav {
 .comment-container {
     background-color: rgba(255, 255, 255, 0.65);
     border-radius: 10px;
-    margin-top: 10px;
     padding: 10px;
     border-top: white 5px groove;
-    margin-top: 3rem;
     color: black;
 }
 
@@ -418,6 +421,10 @@ nav {
 
 .faded {
     color: rgb(113, 113, 113);
+}
+
+.deadline-ss {
+    display: none;
 }
 
 .reported {
@@ -515,11 +522,15 @@ nav {
 
 /*----------------------------------------------- MEDIA QUERIES */
 
-/*-------------------------- SMALL SCREENS (max-width: 1023px) */
-@media (max-width: 1023px) {
+/*-------------------------- TABLETS (max-width: 769px) */
+@media (max-width: 769px) {
 
     .navbar-brand {
         font-size: 1.1rem;
+    }
+
+    .navbar-brand:hover {
+        font-size: 1.2rem;
     }
 
     .nav-divider {
@@ -565,33 +576,127 @@ nav {
         display: block;
     }
 
-    .lesson-list {
-        top: 3rem;
+    .lesson-feed {
+        top: 6rem;
+        margin-top: 0;
+    }
+
+    .card-text {
+        font-size: .8rem;
     }
 }
 
-/*-------------------------- TABLETS (max-width: 426px) */
+/*-------------------------- SMALL SCREENS (max-width: 620px) */
+@media (max-width: 620px) {
+    .welcome-text, .signed-out-text {
+        margin: 0 !important;
+    }
+
+    .center-content {
+        top: 6rem;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        margin-bottom: 3rem;
+    }
+
+    .btn-group a {
+        margin: .6rem;
+    }
+}
+
+/*-------------------------- PHONES (max-width: 426px) */
 @media (max-width: 426px) {
     .navbar {
-        height: 7rem;
+        height: 5rem;
+        flex-direction: column !important;
+        flex-wrap: nowrap;
+    }
+
+    .nav-link {
+        top: 3rem;
+        width: 100%;
+    }
+
+    .navbar-toggler {
+        font-size: .7rem;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .right-column {
+        margin-right: 0;
+        margin-left: 0;
     }
 
     .container-fluid {
         align-content: center !important;
     }
 
-    .navbar-collapse {
-        position: relative;
-        top: -2rem
+    .small-screen-header {
+        display: none;
     }
 
-    .welcome-text {
-        margin-top: 0 !important;
+    .lesson-feed {
+        top: 4rem;
+        margin-top: 0;
+        padding-top: 2rem;
+    }
+
+    .lessons-list {
+        padding: 0 !important;
+    }
+
+    .image-container img {
+        max-width: 95%;
+        max-height: 15rem;
+    }
+
+    .image-flash {
+        display: none;
+    }
+
+    .container-lesson-detail {
+        position: relative;
+        top: 3rem;
+    }
+
+    .right-column-lesson {
+        width: 100%;
+    }
+
+    .lesson-content {
+        padding: 3rem .5rem 1.5rem;
+    }
+
+    .lesson-text {
+        margin-top: 0;
+        padding: 1rem;
+    }
+
+    .image-flash-lesson {
+        display: none;
+    }
+
+    .deadline-ss {
+        display: block;
+        margin-top: .5rem;
+    }
+
+    .comment-container {
+        margin-top: 3rem;
+        border-radius: 0;
     }
 
     .homework-container {
         position: relative;
         top: 8rem;
         margin-bottom: 19rem;
+    }
+
+    .sign-up-container {
+        top: 6rem;
     }
 }
