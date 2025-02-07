@@ -14,10 +14,10 @@
       </div>
     </div>
   </div>
+
   <div class="left-column"></div>
   <div class="right-column container-fluid">
     <div class="row">
-
       <!-- Lessons Column -->
       <div class="col-12 mt-3 left lesson-feed">
         {% if lesson_list %}
@@ -25,7 +25,7 @@
           {% for lesson in lesson_list %}
           <div class="lessons-list col-md-4">
             <div class="card mb-4">
-              <div class="card-body">
+              <div class="card-body lesson-card">
                 <div class="image-container">
                   {% if "placeholder" in lesson.featured_image.url %}
                   <img
@@ -67,7 +67,7 @@
         <div class="row no-lessons">
           <div class="lessons-list col-md-4">
             <div class="card mb-4">
-              <div class="card-body">
+              <div class="card-body lesson-card">
                 <div class="image-container">
                   <img
                     src="{% static 'images/no_lessons.webp' %}"

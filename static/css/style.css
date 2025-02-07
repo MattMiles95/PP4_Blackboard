@@ -183,7 +183,6 @@ nav {
     background-color: black;
     border-top: white 2px groove;
     position: relative;
-    bottom: -2rem;
     z-index: 9;
     width: 100%;
 }
@@ -191,7 +190,7 @@ nav {
 /*-------------------------- DJANGO MESSAGES */
 .msg {
     position: fixed;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
@@ -278,10 +277,8 @@ nav {
 .small-screen-header {
     display: none;
     position: fixed;
-    top: 3.5rem;
     width: 100%;
-    margin: auto;
-    padding: 1.1rem 0 0 0;
+    padding-top: 4.5rem;
     background-color: rgba(0, 0, 0, 0.95);
     color: white;
     text-transform: uppercase;
@@ -291,13 +288,12 @@ nav {
 
 .lesson-feed {
     position: relative;
-    top: 3rem;
+    padding-top: 4.5rem;
     background-color: rgba(0, 0, 0, 0.65);
 }
 
 .lessons-list {
     width: 100% !important;
-    padding: 1rem 0 1rem;
     position: relative;
 }
 
@@ -403,6 +399,7 @@ nav {
 .comment-container {
     background-color: rgba(255, 255, 255, 0.65);
     border-radius: 10px;
+    margin: 0 auto 2rem;
     padding: 10px;
     border-top: white 5px groove;
     color: black;
@@ -458,6 +455,10 @@ nav {
     position: relative;
     top: 5rem;
     margin-bottom: 5rem;
+}
+
+.submission-form {
+    margin-bottom: 1.5rem;
 }
 
 #id_content {
@@ -552,14 +553,13 @@ nav {
         margin-bottom: 1rem;
     }
 
-    .footer {
-        bottom: -4rem;
-    }
-
     .column-container-eng,
     .column-container-hist,
     .column-container-psych {
         background-image: url('/static/images/empty-bg.png');
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 
     .left-column {
@@ -568,8 +568,6 @@ nav {
 
     .right-column {
         width: 100%;
-        margin-right: 80px;
-        margin-left: 80px;
     }
 
     .small-screen-header {
@@ -577,8 +575,7 @@ nav {
     }
 
     .lesson-feed {
-        top: 6rem;
-        margin-top: 0;
+        padding-top: 7.5rem;
     }
 
     .card-text {
@@ -626,11 +623,6 @@ nav {
         right: 2rem;
     }
 
-    .right-column {
-        margin-right: 0;
-        margin-left: 0;
-    }
-
     .container-fluid {
         align-content: center !important;
     }
@@ -647,6 +639,10 @@ nav {
 
     .lessons-list {
         padding: 0 !important;
+    }
+
+    .lesson-card hr {
+        margin: 1.5rem;
     }
 
     .image-container img {

@@ -23,7 +23,7 @@ class Lesson(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='subjects')
-    teacher = models.ForeignKey(User, on_delete=models.CASCADE, related_name='lessons')
+    teacher = models.ForeignKey(User, on_delete=models.CASCADE, related_name='lessons', editable=False)
     featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
     summary = models.TextField(blank=True)

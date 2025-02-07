@@ -24,6 +24,19 @@ class LessonAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content')
 
+    def save_model(self, request, obj, form, change):
+        # Automatically assign current user as teacher for new lessons
+        if not obj.pk:
+            obj.teacher = request.user
+        super().save_model(request, obj, form, change)
+
+    def get_queryset(self, request):
+        # Filter lessons to show only those belonging to current teacher
+        qs = super().get_queryset(request)
+        if request.user.is_superuser:
+            return qs
+        return qs.filter(teacher=request.user)
+
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
