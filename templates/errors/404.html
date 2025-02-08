@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="error-container">
+    <h1>It looks like you've taken a wrong turn.</h1>
+    <a href="{% url 'home' %}" class="btn btn-return">Return to class</a>
+</div>
+{% endblock %}
