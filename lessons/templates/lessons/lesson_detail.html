@@ -102,9 +102,9 @@
           </button>
           {% endif %}
           {% if user.is_authenticated and comment.commenter != user %}
-          <button class="btn btn-warning btn-comment" data-comment_id="{{ comment.id }}">
+          <a class="btn btn-warning btn-comment" data-comment_id="{{ comment.id }}">
             Report
-          </button>
+          </a>
           {% endif %}
         </div>
         {% endfor %}

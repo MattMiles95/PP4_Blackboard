@@ -126,7 +126,7 @@ Due to being targeted at educational institutions, I've designed the site to loo
 
 As the nature of a 'blackboard theme' lends itself to a predominantly greyscale colour scheme, I've used pops of colour to draw the User's focus to important features, such as buttons, links and deadlines. Along with the images uploaded by teachers for their lessons, these pops of colour add enough vibrancy to make the site visually engaging, whilst still maintaining the blackboard theme.
 
-I have also used colour semantically throughout the site to communicate to the User certain features. For example, the colour <span style="color:#208fd9">blue (#208fd9)</span> is used for anything pertaining to homework (deadline flashes, buttons in the homework dashboard and the submit button on the homework submission page). This was primarily done to offer a simple visual distinction between the homepage and the homework dashboard, which have the same layout but for slightly different text, and the homepage buttons being <span style="color:#5a9171">green (#5a9171)</span>. This design extends into the buttons and alert messages that appear as well; for example, the 'delete comment' button being <span style="color:#ba2626">red (danger)</span> and the 'report comment' button being <span style="color:#ffc107">yellow (warning)</span>.
+I have also used colour semantically throughout the site to communicate to the User certain features. For example, the colour <span style="color:#208fd9">blue (#208fd9)</span> is used for anything pertaining to homework (deadline flashes, buttons in the homework dashboard and the submit button on the homework submission page). This was primarily done to offer a simple visual distinction between the homepage and the homework dashboard, which have the same layout but for slightly different text, and the homepage buttons being <span style="color:#5a9171">green (#5a9171)</span>. This design extends into the buttons and alert messages that appear as well; for example, the 'delete comment' button being <span style="color:#ba2626">red (danger).
 
 ##### Typography
 
@@ -187,7 +187,7 @@ The comment section is comprised of 3 parts: (1) the Comment Counter, (2) the Co
 
 User comments have full CRUD functionality, meaning Users can also edit and/or delete their previously posted comments. This can be done by simply clicking the corresponding buttons visible to the User underneath their comments. If the User selects to delete their comment, a confirmation modal will pop up to confirm their action. This is an important UX feature to reduce the likelihood of a comment being delete by accident. 
 
-Comments posted by other Users will have a yellow 'report' button beneath them. This allows users to report offensive comments, which will then be reviewed by a teacher. A reported comment disappears from sight for all users except the author of said comment, who instead will see their comment faded, with a message informing them that their comment has been reported. As with the delete button, the report button triggers a confirmation modal.
+Comments posted by other Users will have a 'report' button beneath them. This allows users to report offensive comments, which will then be reviewed by a teacher. A reported comment disappears from sight for all users except the author of said comment, who instead will see their comment faded, with a message informing them that their comment has been reported. As with the delete button, the report button triggers a confirmation modal.
 </details>
 <br>
 
@@ -230,11 +230,40 @@ Although this project doesn't utilise email verificaion for setting up new accou
 
 #### Admin Panel
 
-Staff vs Superuser
+<details>
+<summary> Staff vs Superuser </summary>
 
-Subjects
+![Screenshot of the admin panel for a 'staff'](_readme-docs/images/admin_staff.png)
+Admin Panel from a teacher perspective.
 
-Lessons
+![Screenshot of the admin panel for a 'superuser'](_readme-docs/images/admin_superuser.png)
+Admin Panel from a superuser perspective.
+
+To allow teachers control over their classes, they require more extensive access to the database. I have decided to use Django's built-in Admin Panel to enable this access, as it is user friendly whilst still offeirng robust control over the database. 
+
+Using my superuser account, I created three teacher accounts and designated them as 'staff'. I then limited their permissions to only those that were required to perform their roles, to improve the UX for teachers by creating a less cluttered Admin Panel. This was also done to limit the number of accounts that have full CRUD functionality over the entire database; teachers cannot delete or change other Users and can only view / edit / delete their own lessons. 
+
+Limiting full CRUD functionality over the entire database to just superuser accounts is important for the security of the database. In practice, the client institution using the site could decide the extent of permissions granted to their teachers, and how many / which teachers are granted superuser rights.
+</details>
+<br>
+
+<details>
+<summary> Subjects </summary>
+
+![Screenshot of 'Subjects' from the Admin Panel](_readme-docs/images/admin_subjects.png)
+
+From the 'Subjects' admin panel, staff can view what subjects exist and who is the assigned teacher for them. Superusers can create, delete and edit subjects here. Presently, the teacher field is restricted to only accounts that are staff, but are not superusers. This could be easily amended in practice, where it is likely that certain teachers would be the superusers.
+</details>
+<br>
+
+<details>
+<summary> Lessons </summary>
+
+![Screenshot of 'Subjects' from the Admin Panel](_readme-docs/images/admin_subjects.png)
+
+From the 'Subjects' admin panel, staff can view the lessons they've created.
+</details>
+<br>
 
 Comment Management
 

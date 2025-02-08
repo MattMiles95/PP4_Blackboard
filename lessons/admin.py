@@ -8,10 +8,9 @@ class SubjectAdmin(admin.ModelAdmin):
     """
     Admin interface for the Subject model.
     """
-    list_display = ('name',)
-    search_fields = ('name',)
+    list_display = ('name', 'teacher',)
+    search_fields = ('name', 'teacher',)
     ordering = ('name',)
-
 
 @admin.register(Lesson)
 class LessonAdmin(SummernoteModelAdmin):
