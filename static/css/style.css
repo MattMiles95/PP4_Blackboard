@@ -46,13 +46,45 @@ hr {
 }
 
 /*-------------------------- BUTTONS */
+.btn-group {
+    text-wrap: wrap;
+    display: flex;
+    width: 100%;
+}
+
+.btn-class {
+    background-color: #5a9171;
+    font-size: 1.5rem;
+    border: #ffffff 2px groove !important;
+    width: 8rem !important;
+    margin: 0 2rem;
+    border-radius: .25rem;
+}
+
+.btn-class:hover,
+.btn-class:active,
+.btn-class:focus {
+    background-color: white;
+    color: #5a9171;
+    transition: 0.3s;
+    box-shadow: none !important;
+}
+
 .btn-signup,
 .btn-edit,
-.btn-submit {
+.btn-submit,
+.btn-return {
     background-color: #5a9171;
     color: #fff;
     font-family: 'Indie Flower', cursive;
     text-wrap: nowrap;
+}
+
+.btn-return {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
 }
 
 .btn-signup:hover,
@@ -60,9 +92,11 @@ hr {
 .btn-edit:hover,
 .btn-edit:active,
 .btn-submit:hover,
-.btn-submit:active {
+.btn-submit:active,
+.btn-return:hover,
+.btn-return:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #5a9171;
 }
 
 .btn-comment {
@@ -96,8 +130,19 @@ hr {
     background: #fff;
 }
 
-.btn-group {
-    text-wrap: wrap;
+.btn-homework-class {
+    background-color: #208fd9;
+    width: 10rem;
+    font-size: 1.5rem;
+    border: white 2px groove;
+    margin: .5rem 2rem;
+}
+
+.btn-homework-class:hover,
+.btn-homework-class:active {
+    background-color: white;
+    color: #208fd9;
+    transition: 0.3s;
 }
 
 /*-------------------------- FONTS */
@@ -217,28 +262,6 @@ nav {
 
 .modal-backdrop {
     display: none;
-}
-
-/*----------------------------------------------- INDEX.html */
-.class-btn {
-    background-color: #5a9171;
-    width: 10rem;
-    font-size: 1.5rem;
-    border: white 2px groove;
-    margin: 0 2rem;
-}
-
-.class-btn:hover, .class-btn:active {
-    background-color: white;
-    color: #5a9171;
-    transition: 0.3s;
-}
-
-.class-btn:focus {
-    border: white 5px groove;
-    box-shadow: 0 0 0 .1rem white;
-    background-color: white;
-    color: #5a9171;
 }
 
 /*----------------------------------------------- LESSON FEED */
@@ -436,28 +459,6 @@ nav {
     color: rgb(255, 0, 0);
 }
 
-/*----------------------------------------------- HOMEWORK_DASHBOARD.html */
-.homework-class-btn {
-    background-color: #208fd9;
-    width: 10rem;
-    font-size: 1.5rem;
-    border: white 2px groove;
-    margin: .5rem 2rem;
-}
-
-.homework-class-btn:hover, .homework-class-btn:active {
-    background-color: white;
-    color: #208fd9;
-    transition: 0.3s;
-}
-
-.homework-class-btn:focus {
-    border: white 5px groove;
-    box-shadow: 0 0 0 .1rem white;
-    background-color: white;
-    color: #208fd9;
-}
-
 /*----------------------------------------------- HOMEWORK_SUBMISSION.html */
 .homework-container {
     position: relative;
@@ -527,6 +528,27 @@ nav {
 
 .highlight {
     color: #ffd900;
+}
+
+/*----------------------------------------------- ERROR PAGES */
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+.link-return {
+    color: #79b390;
+    text-decoration: none;
+}
+
+.link-return:hover,
+.link-return:active {
+    color: #5a9171;
+    text-decoration: underline !important;
 }
 
 /*----------------------------------------------- MEDIA QUERIES */

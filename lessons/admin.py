@@ -19,7 +19,7 @@ class LessonAdmin(SummernoteModelAdmin):
     """
     list_display = ('title', 'subject', 'teacher', 'lesson_status', 'created_on', 'updated_on')
     search_fields = ['title', 'content']
-    list_filter = ('lesson_status', 'created_on')
+    list_filter = ('lesson_status', 'subject', 'updated_on')
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content')
 
@@ -42,4 +42,5 @@ class CommentAdmin(admin.ModelAdmin):
     """
     Admin interface for the Comment model.
     """
-    list_display = ('lesson', 'commenter', 'body', 'created_on', 'comment_status')
+    list_display = ('lesson', 'commenter', 'created_on', 'comment_status')
+    list_filter = ('comment_status', 'created_on', 'commenter')

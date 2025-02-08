@@ -14,34 +14,32 @@ If you have a superuser or staff account, you can [access the admin panel here](
 
 ### [User Experience (UX)](#user-experience-ux-1)
 * [User Stories](#user-stories)
+### [Logic](#logic-1)
+* [Entity Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
 ### [Design](#design-1)
-* [Logic Design](#logic-design)
-* [Visual Design](#visual-design)
+* [Wireframes](#wireframes)
+* [Theme](#theme)
+* [Colours](#colours)
+* [Typography](#typography)
+* [Accessibility](#accessibility)
+* [Responsiveness](#responsiveness)
 ### [Features](#features-1)
-#### [Front End](#front-end)
-* [Homepage](#homepage)
-* [Lesson Feed](#lesson-feed)
-* [Lesson Detail](#lesson-detail)
-* [Comments](#comments)
-* [Homework](#homework)
-* [Authentication](#authentication)
-#### [Admin Panel](#admin-panel)
-* [Subjects](#subjects)
-* [Lessons](#lessons)
-* [Comment Management](#comment-management)
-* [Homework Submissions](#homework-submissions)
-* [User Management](#user-management)
+* [Front End](#front-end)
+* [Admin Panel](#admin-panel)
 ### [Future Features](#future-features-1)
 * [Bespoke Profiles](#bespoke-profiles)
 * [Front End UI for Teachers](#front-end-ui-for-teachers)
 * [Homework CRUD Functionality](#homework-crud-functionality)
 * [More Content](#more-content)
+* [Refactoring](#refactoring)
+### [Project Management - an Agile Approach](#project-management---an-agile-approach-1)
+* [Agile Methodology](#agile-methodology)
+* [MoSCoW Prioritisation](#moscow-prioritisation)
+* [GitHub Project - Kanban Board](#github-project---kanban-board)
 ### [Technologies Used](#technologies-used-1)
 * [Languages](#languages)
-### [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used-1)
+* [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used-1)
 ### [Testing](#testing-1)
-* [Validators](#validators)
-* [Manual Testing & Bug Fixes](#manual-testing--bug-fixes)
 ### [Local Development & Deployment](#local-development--deployment-1)
 * [Forking the GitHub Repository](#forking-the-github-repository)
 * [Local Clone](#local-clone)
@@ -50,40 +48,43 @@ If you have a superuser or staff account, you can [access the admin panel here](
 * [Copy (Written Material)](#copy-written-material)
 * [Online Resources](#online-resources)
 
-### User Experience (UX)
+## User Experience (UX)
+
 Blackboard provides two distinct User experiences: the Student Experience and the Teacher Experience.
 
-#### Student Experience
-The Student Experience is entirely front-end focused. Once signed in, students can naviagte the app to access different subjects, each with their own set of lessons created and published by the teachers. Upon selecting a subject, the student is presented with an 'infinite scroll' list of relevant lessons, and from there they can select which lesson they want to enter.
+### Student Experience
+
+The Student Experience is entirely front end focused. Once signed in, students can naviagte the app to access different subjects, each with their own set of lessons created and published by the teachers. Upon selecting a subject, the student is presented with an 'infinite scroll' list of relevant lessons, and from there they can select which lesson they want to enter.
 
 Each lesson has it's own comment thread, allowing students and teachers to discuss the lesson's content in an open forum. Comments can be edited and/or deleted by the commenter, or reported by other students who may take offence to the comment. Reported comments are hidden from view pending review of a teacher, who can either approve or delete the comment as they see fit.
 
 As well as navigating and commenting on lessons, students can submit homework directly to their teachers via the 'homework' section of the site.
 
-The student experience is focused simple but rewarding interaction with front-end features, offering a contemporary way for students to engage with academic material.
+The student experience is focused simple but rewarding interaction with front end features, offering a contemporary way for students to engage with academic material.
 
-#### Teacher Experience
+### Teacher Experience
+
 Teacher's accounts are designated as 'Staff' by a superuser, and granted certain Admin permissions to allow them to interact directly with the site's database.
 
 Using Django's built in, user-friendly Admin panel, teachers are given full CRUD (Create, Read, Update and Delete) functionality over lessons, User comments and homework submissions. This allows teachers to directly manage the content of their respective subjects, as well as monitor and manage User comments and review student homework submissions. Handling these features via the Django Admin panel allows teachers a greater degree of control whilst also hiding the 'behind the scenes' work from their students. 
 
 The teacher experience is focused on an intuitive Admin panel allowing for quick and easy access to the site's database, without compromising on the level of control afforded to them.
 
-#### User Stories
+### User Stories
 
 When originally designing Blackboard, I created a Project in GitHub containing a list of User Stories that set out my intended features. These User Stories can be viewed [here](https://github.com/users/MattMiles95/projects/7).
 
-### Design
+## Logic
 
-#### Logic Design
+### Entity Relationship Diagram (ERD)
 
-The Entity Relationship Diagram (ERD) below represents the project database and the relationship between its models.
+The ERD below represents the project database and the relationship between its models.
 
 ![ERD for project database](_readme-docs/images/erd.png)
 
-#### Visual Design
+## Design
 
-##### Wireframes
+### Wireframes
 
 Below are the wireframes I used to create the initial layout and design for the project, including it's homepage, a 'lesson feed' and a detailed view of a lesson. 
 
@@ -105,7 +106,7 @@ Below are the wireframes I used to create the initial layout and design for the 
 ![Wireframe depicting the Lesson Detail](_readme-docs/images/wf_lesson-detail.png)
 </details>
 
-##### Theme
+### Theme
 
 <details>
 <summary> Screenshot - Homepage </summary>
@@ -122,30 +123,31 @@ Below are the wireframes I used to create the initial layout and design for the 
 <br>
 Due to being targeted at educational institutions, I've designed the site to look like its namesake. I've used an image of a plain blackboard for each page's background (sometimes with writing added in photoshop) and selected fonts that match this aesthetic.
 
-##### Colours
+### Colours
 
 As the nature of a 'blackboard theme' lends itself to a predominantly greyscale colour scheme, I've used pops of colour to draw the User's focus to important features, such as buttons, links and deadlines. Along with the images uploaded by teachers for their lessons, these pops of colour add enough vibrancy to make the site visually engaging, whilst still maintaining the blackboard theme.
 
 I have also used colour semantically throughout the site to communicate to the User certain features. For example, the colour <span style="color:#208fd9">blue (#208fd9)</span> is used for anything pertaining to homework (deadline flashes, buttons in the homework dashboard and the submit button on the homework submission page). This was primarily done to offer a simple visual distinction between the homepage and the homework dashboard, which have the same layout but for slightly different text, and the homepage buttons being <span style="color:#5a9171">green (#5a9171)</span>. This design extends into the buttons and alert messages that appear as well; for example, the 'delete comment' button being <span style="color:#ba2626">red (danger).
 
-##### Typography
+### Typography
 
 As mentioned above, I chose fonts that were inkeeping with the aesthetic of the blackboard theme; fonts that emulate a 'handwritten' style. The main font used is the Google Font, 'Indie Flower', as this most closely resembled the handwritten style I wanted. I have also used the Google Font, 'Patrick Hand', in places I wanted a slightly more legible font, as this font uses a less exagerated handwritten style. Lastly, for even larger chunks of text where I wanted the font to be even clearer (such as the lessons themselves), I've used the Google Font, 'Lexend'. This is a neutral sans-serif font that ensures none of the lesson content is lost in the aesthetic of the site.
 
-##### Accessibility
+### Accessibility
+
 To ensure every User has equal opportunity to enjoy the site, I ensured maximum accessibility in its design and code:
  
 * Alt text and aria-labels are used throughout the site to aid screen readers.
 
 * All colour schemes utilise contrast between background and foreground to ensure ease of readability.
 
-##### Responsiveness
+### Responsiveness
 
 Due to this site being intended for use in educational environments, it is designed primarily for workstations (computers / laptops). However, using Bootstrap and CSS media queries, I have also designed the site to be fully responsive across small screen devices, such as tablets and phones.
 
-### Features
+## Features
 
-#### Front End
+### Front End
 
 <details>
 <summary> Homepage </summary>
@@ -228,15 +230,28 @@ Although this project doesn't utilise email verificaion for setting up new accou
 </details>
 <br>
 
-#### Admin Panel
+<details>
+<summary> Custom Error Pages </summary>
+
+![Screenshot of custom 404 Error page](_readme-docs/images/feature_404-error.png)
+404 Error
+
+![Screenshot of custom 500 Error page](_readme-docs/images/feature_500-error.png)
+500 Error
+
+To provide better UX in case of a 404 or 500 Error, I've created custom error handling pages that direct the User back to the homepage without breaking the User's immersion.
+</details>
+<br>
+
+### Admin Panel
 
 <details>
 <summary> Staff vs Superuser </summary>
 
-![Screenshot of the admin panel for a 'staff'](_readme-docs/images/admin_staff.png)
+![Screenshot of the Admin Panel for a 'staff'](_readme-docs/images/admin_staff.png)
 Admin Panel from a teacher perspective.
 
-![Screenshot of the admin panel for a 'superuser'](_readme-docs/images/admin_superuser.png)
+![Screenshot of the Admin Panel for a 'superuser'](_readme-docs/images/admin_superuser.png)
 Admin Panel from a superuser perspective.
 
 To allow teachers control over their classes, they require more extensive access to the database. I have decided to use Django's built-in Admin Panel to enable this access, as it is user friendly whilst still offeirng robust control over the database. 
@@ -259,14 +274,182 @@ From the 'Subjects' admin panel, staff can view what subjects exist and who is t
 <details>
 <summary> Lessons </summary>
 
-![Screenshot of 'Subjects' from the Admin Panel](_readme-docs/images/admin_subjects.png)
+![Screenshot of 'Lessons' from the Admin Panel](_readme-docs/images/admin_lessons.png)
 
-From the 'Subjects' admin panel, staff can view the lessons they've created.
+From the 'Lessons' admin panel, staff have full CRUD functionality over their own lessons, and superusers can manage all lessons. UX is improved for the teachers with the use of Django Summernote, providing a WYSIWYG (What You See Is What You Get) editor package that integrates the Summernote editor with the Admin Panel. This allows teachers to format the textarea content, allowing for more visually engaging lessons. Other UX enhancements include the 'slug' field automatically populating alongside the 'title' field; the 'subject' field including all available subjects within a dropdown menu; a cloudbased image hosting server (Cloudinary) that allows teachers to upload images within their lessons; and the ability to save a lesson as a draft and come back to it later. Lessons created here will then populate the respective subject's lesson feed (not including draft lessons).
 </details>
 <br>
 
-Comment Management
+<details>
+<summary> Comment Management </summary>
 
-Homework Submissions
+![Screenshot of 'Comments' from the Admin Panel](_readme-docs/images/admin_comments.png)
 
-User Management
+From the 'Comments' admin panel, staff have full CRUD functionality over User comments. This allows staff to quickly observe all posted comments, and can be organised by date, user, lesson, etc. When a User posts a comment, that comment is given a default status of 'approved.' When a comment is reported, this status is changed to 'reported'. The reported comment disappears from the front end site, but remains in the database. Teachers can view all reported comments and either change their status back to 'approved', or delete the comment all together.
+</details>
+<br>
+
+<details>
+<summary> Homework Submissions </summary>
+
+![Screenshot of 'Homework' from the Admin Panel](_readme-docs/images/admin_comments.png)
+
+From the 'Homework' admin panel, staff can view all received homework submissions. As with other admin panels, these can be organised or filtered by certain values, such as lesson or subject. By default, when a student submits their homework, it is given a status of 'marked==False'. Staff can change this value to help filter out the homeworks they've already marked. Each homework submission has a section where students can leave comments for the teacher, as well as a section where teachers can make their own notes as they mark the work.
+</details>
+<br>
+
+## Future Features
+
+As future features of this project, I would:
+
+### Bespoke Profiles
+
+Create a custom User model (as opposed to Django's built-in User model) so that I could create bespoke profiles. For example, when registering an account, the User could select whether they are a student or a teacher. I would then be able to alter the site to look and behave differently dependent on the User's role, such as having the Homework Dashboard take teachers to a page where they can mark submitted homework, and students to the usual Homework Submission page. This would also allow me to add further attributes to each User, such as their subject choices, and have the site only display that User's subjects. 
+
+### Front End UI for Teachers
+
+Create a front end UI for teachers, so they can interact with the database without having to access Django's Admin Panel. This would allow for a more enjoyable and seamless UX for teachers, whilst also offfering more customisability than the somewhat limited constraints of a built-in framework.
+
+### Homework CRUD Functionality
+
+Update the way that homework submissions are handled to allow for full CRUD functionality. Rather than simply posting a form to the database for a staff member to retrieve in the Admin Panel, I would design a homework profile for each student User. Here, students would be able to upload homework for teachers to view, but would also be able to view, edit and delete the homework themselves. Each homework submission could have a section similiar to the Comment Thread in the Lesson Detail view, where the teacher can leave feedback for the student and the student can respond in kind.
+
+### More Content
+
+Add more content to more accurately emulate an Educational Environment. This would involve more subjects, more lessons, more teachers and more students. Adding substantially more content would increase the demand on the project and force further improvements. With more information in the database, better means would need to be developed to filter, organise and navigate this bulk of information. Which brings me to my last point...
+
+### Refactoring
+
+Refactor verbose and/or repetative code. As I developed this project, I found myself looking back at code I wrote at the beginning and realising that I could have achieved the same or even better results with more streamlined code. For example, in my Lesson app, I have a different template per subject. However, in the Homework app I developed later on, I wrote the views and templates in such a way where the subject selected in the Homework Dashboard dictated the information available to the User in the Homework Submission form. This meant I didn't have to create a separate page per subject, as I did in the Lesson app. Given more time, I would refactor this code to improve it's efficiency. This would also make it much quicker and easier to add more subjects at a later date, as there wouldn't be a requirement to create more templates that ultimately share much of the same code. 
+
+## Testing
+
+For manual testing, lighthouse reports and validator results, please head to [testing.md](_readme-docs/testing/testing.md).
+
+## Project Management - an Agile Approach
+
+### Agile Methodology
+
+I used the Agile methodology to plan my project in terms of iterations. Tasks were created as segmented 'User Stories', each with their own acceptance criteria. These User Stories were prioritised and worked through incrementally, allowing for an objective driven yet adaptable development process. Features I knew I wanted but wouldn't feasibly achieve by the project deadline were labelled as 'not required in this iteration'. 
+
+### MoSCoW Prioritisation
+
+In order to prioritise my User Stories, I used MoSCoW Prioritisation to label each issue one of the following:
+
+* Must Have - product requires this feature to be viable.
+
+* Should Have - feature would add substantial value to product
+
+* Could Have - feature could add value to the product.
+
+* Won't Have - feature isn't required during this iteration (non-priority)
+
+### GitHub Project - Kanban Board
+
+I used GitHub Issues and Projects to manage the above-mentioned process. Each issue provided a User Story, which was placed on a Kanban board in my Blackboard Project. This board was separated into 4 columns: 'To Do', 'In Progress', 'Done' and 'Not Required This Iteration'.
+
+## Technologies Used
+
+### Languages 
+
+* [HTML 5](https://en.wikipedia.org/wiki/HTML5)
+
+* [CSS 3](https://en.wikipedia.org/wiki/CSS#CSS_3)
+
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+
+### Frameworks, Libraries & Programs Used
+
+* [Visual Studios Code](https://code.visualstudio.com/) - IDE.
+
+* [Git](https://git-scm.com/) - Version control system.
+
+* [GitHub](https://github.com/) - Online repository storage and Agile project management tools.
+
+* [Heroku](https://www.heroku.com/home) - Site for app deployment.
+
+* [Django 4.2.17](https://www.djangoproject.com/) - Open-source Python framework.
+
+* [Bootstrap 5](https://www.djangoproject.com/) - Open-source CSS framework.
+
+* [PostgreSQL](https://www.postgresql.org/) - Open-source object-relational database system.
+
+* [Cloudinary](https://cloudinary.com/home) - Cloud-based file storage service.
+
+* [Psycopg 3.2.3](https://www.psycopg.org/) - PostgreSQL database adapter for python.
+
+* [Google Fonts](https://fonts.google.com/) - Open-source font library.
+
+* [Font Awesome](https://fontawesome.com/) - CSS font and icon toolkit.
+
+* [Lucid](https://lucid.app/documents#/documents?folder_id=home) - Logic diagram design app.
+
+* [Balsamiq](https://balsamiq.com/) - Wireframing app.
+
+* [Freepik](https://www.freepik.com/) - Open-source image library.
+
+* [Photopea](https://www.photopea.com/) - Photo editing software.
+
+* [Chrome DevTools](https://developer.chrome.com/docs/devtools) - Browser developer tools for testing and auditing code.
+
+* [Chrome Eye Dropper](https://chromewebstore.google.com/detail/eye-dropper/hmdcmlfkchdmnmnmheododdhjedfccka) - Browser extension for colour sampling.
+
+## Local Development & Deployment
+
+This app was developed using VSCode and deployed via Heroku.
+
+Prior to the below deployment process, enter the "pip freeze --local requirements.txt" command in your Git Bash terminal to update your requirements.txt file. Once this has been done, you can deploy via Heroku using the following steps:
+
+1. Login to Heroku.
+
+2. On the 'Dashboard', click "New" then "Create new app".
+
+3. Choose your unique app name and select your region.
+
+4. Click "Create app".
+
+5. Under "Settings", locate "Config Vars".
+
+6. Click "Reveal Config Vars" and add your SECRET_KEY, DATABASE_URL and CLOUDINARY_URL (if required).
+
+8. Click the "Deploy" tab.
+
+9. Select GitHub as deployment method and search for your repository, then click "link".
+
+10. Select either "Enable Automatic Deploys" or "Manual Deploy".
+
+11. Wait for the build and publish process. Once completed, follow provided link to the deployed app to ensure successful deployment.
+
+### Forking the GitHub Repository
+Forking the repository creates a copy of the original, allowing us to view and change the repository without affecting the original. This can be done by following the below steps:
+
+1. Open the GitHub repository - [PP4_Blackboard](https://github.com/MattMiles95/PP4_Blackboard).
+
+2. Select the "Fork" button in the top-right section of the page.
+
+A copy of the repository should now be in your own GitHub account.
+
+### Local Clone
+Cloning the repository allows you to copy the files into your own IDE for local development. This can be done by following the below steps:
+
+1. Open the GitHub repository - [PP4_Blackboard](https://github.com/MattMiles95/PP4_Blackboard).
+
+2. Navigate the 'Code' dropdown menu and select whether you wish to clone the code using HTTPS, SSH or GitHub CLI.
+
+3. Open the a Git Bash terminal in your chosen IDE and navigate your working directory to the location you wish to clone the project.
+
+4. Use the command 'git clone' followed by the link you copied from the repository. 
+
+## Credits
+
+### Affiliations
+
+'Merley Hillstone College' is a fictional educational institution fabricated for the purpose of this project. Any similarities to actual educational institutions, staff or students are entirely coincidental.
+
+Blackboard is likewise a fictional brand I created for this project. I hold no copyright for the brand and am not affiliated with any persons, organisations or platforms.
+
+### Copy (Written Material)
+
+All lesson content featured in this project was generated via ChatGPT. All other written material was created by me.

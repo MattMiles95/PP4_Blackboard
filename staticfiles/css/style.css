@@ -549,6 +549,17 @@ nav {
     padding: 2rem;
 }
 
+.link-return {
+    color: #79b390;
+    text-decoration: none;
+}
+
+.link-return:hover,
+.link-return:active {
+    color: #5a9171;
+    text-decoration: underline !important;
+}
+
 /*----------------------------------------------- MEDIA QUERIES */
 
 /*-------------------------- TABLETS (max-width: 769px) */

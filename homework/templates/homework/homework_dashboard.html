@@ -7,16 +7,14 @@
         <h1 class="display-4">Homework Dashboard</h1>
         <h4 class="mt-3 mb-3">Which subject did you want to submit homework for?</h4>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="btn-group" role="group">
-                <!-- Loop through subjects and display a button for each -->
-                {% for subject in subjects %}
-                <a aria-current="page" href="{% url 'homework_submission' subject.name %}">
-                    <button type="button" class="btn btn-primary me-2 homework-class-btn">{{ subject.name }}</button>
-                </a>
-                {% endfor %}
-            </div>
+    <div class="col-md-6">
+        <div class="btn-group" role="group">
+            <!-- Loop through subjects and display a button for each -->
+            {% for subject in subjects %}
+            <a aria-current="page" href="{% url 'homework_submission' subject.name %}"
+                class="btn btn-primary btn-homework-class">{{ subject.name }}
+            </a>
+            {% endfor %}
         </div>
     </div>
 </div>
