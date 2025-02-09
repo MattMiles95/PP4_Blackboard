@@ -20,9 +20,13 @@
         <div class="col-md-8 mt-3 offset-md-2">
             <form class="login" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {{ form.login }}
+                {{ form.password }}
+                {% if form.captcha %}
+                    {{ form.captcha }}
+                {% endif %}
                 {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
                 <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
             </form>

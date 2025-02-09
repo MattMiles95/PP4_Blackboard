@@ -207,3 +207,59 @@ Register:
 | Login | 98 | 95 | 100 | 90 |
 | Logout | 98 | 94 | 100 | 90 |
 | Account Registration | 98 | 95 | 100 | 90 |
+
+The only page to have any of the test categories score below 90 is 'lesson_detail.html'. This is due to 4 anchor tags not having crawlable links. These are the two anchor tags for each the 'report' button and the 'delete' button. The reason these anchor tags don't have crawlable links is because they are intentionally written with placeholder text (href="javascript:void(0)">), as the JavaScript that enables the functionality of these buttons does so by replacing the href with 'delete/report_comment/${commentId}' when clicked.
+
+## Manual Testing & Bug Fixes
+
+Extensive manual testing was conducted on each feature of this project to ensure all were functioning as expected. The outcome of this testing and any bug fixes made during the project's development are recorded in the tables below.
+
+### Manual Testing
+
+#### Authentication - Account Registration
+
+| **Feature** | **Expected Outcome** | **Result** |
+| --- | --- | --- |
+| Account Registration (success) | Given the correct details provided, a new User account is created. | Pass |
+| Account Registration (no email) | Given no email is provided, the User is prompted to complete this field | Pass |
+| Account Registration (incorrect email) | Given an email that does not meet the specifications is provided, the User is advised accordingly | Pass |
+| Account Registration (duplicated email) | Given an email that already belongs to an account is provided, the User is advised accordingly | Pass |
+| Account Registration (no username) | Given no username is provided, the User is prompted to complete this field | Pass |
+| Account Registration (duplicated username) | Given a username that already belongs to an account is provided, the User is advised accordingly | Pass |
+| Account Registration (no password) | Given no password is provided, the User is prompted to complete this field | Pass |
+| Account Registration (incorrect password - too similar to other personal information) | Given a password that does not meet this specification is provided, the User is advised accordingly | Pass |
+| Account Registration (incorrect password - 8 character minimum) | Given a password that does not meet this specification is provided, the User is advised accordingly | Pass |
+| Account Registration (incorrect password - common password) | Given a password that does not meet this specification is provided, the User is advised accordingly | Pass |
+| Account Registration (incorrect password - entirely numeric) | Given a password that does not meet this specification is provided, the User is advised accordingly | Pass |
+| Account Registration (password confirmation error) | Given the password provided in the confrimation box does not match the original password provided, the User is advised accordingly | Pass |
+| 'Sign in' link | Given the User clicks the 'Sign in' link, they are directed to the Login page | Pass |
+
+#### Authentication - Login
+
+| **Feature** | **Expected Outcome** | **Result** |
+| --- | --- | --- |
+| Login (success) | Given the correct details provided, the User is signed in. | Pass |
+| Login (missing details) | Given the User tries to sign in without providing a username and/or password, they are prompted to complete these fields. | Pass |
+| Login (incorrect details) | Given the User tries to sign in by providing an incorrect username and/or password, they are advised accordingly. | Pass |
+| 'Sign up' link | Given the User clicks the 'Sign up' link, they are directed to the Registration page | Pass |
+| 'Remember Me' checkbox | Given the User clicks the 'Remember Me' checkbox, if they navigate away from the page and then return, they remain logged in | Exception |
+
+#### Authentication - Logout
+
+#### Authentication - Security
+
+#### Base Template Features
+
+#### Homepage
+
+#### Lesson Feeds
+
+#### Lesson Detail
+
+#### Homework Dashboard
+
+#### Homework Submission
+
+#### Admin Panel
+
+### Bug Fixes

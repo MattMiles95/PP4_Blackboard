@@ -80,6 +80,10 @@ hr {
     text-wrap: nowrap;
 }
 
+.btn-signup {
+    width: 5rem;
+}
+
 .btn-return {
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
@@ -515,6 +519,16 @@ nav {
 .sign-in-container {
     position: relative;
     top: 7.5rem;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+}
+
+.login input {
+    margin-bottom: 1rem;
+    width: 12rem;
 }
 
 .sign-up-container {
