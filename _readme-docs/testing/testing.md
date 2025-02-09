@@ -168,6 +168,10 @@ Lesson Feed (Psychology):
 
 ![Screenshot of Lighthouse Report for Lesson Feed (Psychology)](/_readme-docs/images/lighthouse_psych.png)
 
+Lesson Detail:
+
+![Screenshot of Lighthouse Report for Lesson Detail](/_readme-docs/images/lighthouse_lesson-detail.png)
+
 Homework Dashboard:
 
 ![Screenshot of Lighthouse Report for Homework Dashboard](/_readme-docs/images/lighthouse_homework-dashboard.png)
@@ -190,14 +194,16 @@ Register:
 </details>
 <br>
 
-As per the above screenshots, 'Lesson Feed (English)' and 'Lesson Feed (History)' each scored 78 on Best Practices. This is due to 
-
-| **Page** | **Performance** | **Accessibility**| **Best Practices** | **SEO** | **Overall Score** |
-| --- | --- | --- | --- | --- | --- |
-| Homepage | 0 | 0 | 0 | 0 | 0 |
-| Lesson Feed (Eng) | 0 | 0 | 0 | 0 | 0 |
-| Lesson Feed (Hist) | 0 | 0 | 0 | 0 | 0 |
-| Lesson Feed (Psych) | 0 | 0 | 0 | 0 | 0 |
-| Lesson Detail | 0 | 0 | 0 | 0 | 0 |
-| Homework Dashboard | 0 | 0 | 0 | 0 | 0 |
-| Homework Submission | 0 | 0 | 0 | 0 | 0 |
+| **Page** | **Performance** | **Accessibility**| **Best Practices** | **SEO** |
+| --- | --- | --- | --- | --- |
+| Homepage (Authorised) | 98 | 98 | 100 | 90 |
+| Homepage (Unauthorised) | 98 | 98 | 100 | 90 |
+| Lesson Feed (Eng) | 95 | 95 | 100 | 91 |
+| Lesson Feed (Hist) | 95 | 95 | 100 | 91 |
+| Lesson Feed (Psych) | 100 | 100 | 100 | 91 |
+| Lesson Detail | 100 | 91 | 100 | 82 |
+| Homework Dashboard | 98 | 98 | 100 | 90 |
+| Homework Submission | 99 | 90 | 100 | 90 |
+| Login | 98 | 95 | 100 | 90 |
+| Logout | 98 | 94 | 100 | 90 |
+| Account Registration | 98 | 95 | 100 | 90 |
