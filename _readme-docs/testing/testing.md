@@ -20,13 +20,13 @@ Return to the [README](/README.md).
 ### HTML
 
 <details>
-<summary> HTML Validation - W3 </summary>
+<summary> HTML Validation - W3C </summary>
 
 ![Screenshot of HTML Validation from W3](/_readme-docs/images/validator_html.png)
 </details>
 <br>
 
-Due to the use of Django template tags causing false errors, I have carried out my HTML validation tests by navigating to each page of my site and pressing 'ctrl + U' (view page source). I then copied and pasted this code into the 'direct input' field of the W3 Nu Html Checker.
+Due to the use of Django template tags causing false errors, I have carried out my HTML validation tests by navigating to each page of my site and pressing 'ctrl + U' (view page source). I then copied and pasted this code into the 'direct input' field of the W3C Nu Html Checker.
 
 The below table shows the number of warnings and errors indicated for each page. I only tested pages I have built; I have not tested any default Django templates (such as those included with Django allauth).
 
@@ -45,10 +45,27 @@ The below table shows the number of warnings and errors indicated for each page.
 ### CSS
 
 <details>
-<summary> CSS Validation - W3 </summary>
+<summary> CSS Validation - W3C </summary>
 
 ![Screenshot of HTML Validation from W3](/_readme-docs/images/validator_css.png)
 </details>
 <br>
 
-CSS passed validation with 0 errors and 1 warning; the warning was just advising that 
+Due to Bootstrap causing false warnings, I tested my CSS by direct input into W3C's CSS Validation Service.
+
+CSS passed validation with 0 errors and 1 warning. This warning was simply advising that imported files were not checked by the validator's direct input service (referring to the inported Google Fonts).
+
+### PEP8 (Python)
+
+<details>
+<summary> PEP8 (Python) Validation - * </summary>
+
+![Screenshot of Python Validation from *](/_readme-docs/images/validator_css.png)
+</details>
+<br>
+
+| **Directory** | **adapters.py** | **admin.py**| **forms.py** | **models.py** | **urls.py** | **views.py** |
+| --- | --- | --- | --- | --- | --- | --- |
+| Blackboard (Project) | * | * | * | * | * |
+| Lessons (App) | * | * | * | * | * | * |
+| Homework (App) | * | * | * | * | * | * |

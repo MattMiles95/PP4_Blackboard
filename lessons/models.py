@@ -48,16 +48,16 @@ class Lesson(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     deadline = models.DateTimeField()
     lesson_status = models.IntegerField(choices=LESSON_STATUS, default=0)
-    
+
     def formatted_created_on(self):
         return self.created_on.strftime('%d %b. %Y, %I:%M %p')
-    
+
     def formatted_deadline(self):
         return self.deadline.strftime('%d %b. %Y, %I:%M %p')
 
     def __str__(self):
         return self.title
-    
+
 
 class Comment(models.Model):
     """
@@ -68,10 +68,11 @@ class Comment(models.Model):
         on_delete=models.CASCADE,
         related_name='comments'
     )
-    commenter = models.ForeignKey(User,
+    commenter = models.ForeignKey(
+        User,
         on_delete=models.CASCADE,
         related_name='commenter'
-        )
+    )
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     comment_status = models.IntegerField(choices=COMMENT_STATUS, default=0)
