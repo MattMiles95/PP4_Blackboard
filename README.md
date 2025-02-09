@@ -490,7 +490,38 @@ Cloning the repository allows you to copy the files into your own IDE for local 
 
 3. Open the a Git Bash terminal in your chosen IDE and navigate your working directory to the location you wish to clone the project.
 
-4. Use the command 'git clone' followed by the link you copied from the repository. 
+4. Use the command 'git clone' followed by the link you copied from the repository.
+
+### Code Institute PostgreSQL Database
+
+1. Create a Code Institute PostgreSQL account.
+
+2. Create a new instance.
+
+3. Copy the database URL.
+
+4. Add database to the **env.py** file in your IDE.
+
+5. Add the database to your Heroku app's **Config Vars**.
+
+### Cloudinary
+
+1. Create an account with [Cloudinary](https://cloudinary.com/). 
+
+2. Add your Cloudinary API environment variable to your **env.py** and Heroku app's **Config Vars**.
+
+3. In settings.py, add Cloudinary libraries to INSTALLED_APPS in the following order: 
+```
+   'cloudinary_storage',  
+   'django.contrib.staticfiles',  
+   'cloudinary',
+```
+4. Also in settings.py, configure Cloudinary to provide secure responses over HTTPS instead of HTTP:
+```
+cloudinary.config(
+    secure=True
+)
+```
 
 ## Credits
 
@@ -503,3 +534,7 @@ Blackboard is likewise a fictional brand I created for this project. I hold no c
 ### Copy (Written Material)
 
 All lesson content featured in this project was generated via ChatGPT. All other written material was created by me.
+
+### Code Credits
+
+The 'lesson feed' and 'lesson detail' features of this project were based off the 'index' and 'post detail' files from Code Institute's 'I Think Therefore I Blog' walkthrough project. This includes some of the CSS, as well as the python and JavaScript for User comments. All other code featured in this project has been written by me, with the assistance of the Slack community, various forums, articles and YouTube videos, and the help from my mentor, Mitko Bachvarov.
