@@ -191,3 +191,13 @@ Register:
 <br>
 
 As per the above screenshots, 'Lesson Feed (English)' and 'Lesson Feed (History)' each scored 78 on Best Practices. This is due to 
+
+| **Page** | **Performance** | **Accessibility**| **Best Practices** | **SEO** | **Overall Score** |
+| --- | --- | --- | --- | --- | --- |
+| Homepage | 0 | 0 | 0 | 0 | 0 |
+| Lesson Feed (Eng) | 0 | 0 | 0 | 0 | 0 |
+| Lesson Feed (Hist) | 0 | 0 | 0 | 0 | 0 |
+| Lesson Feed (Psych) | 0 | 0 | 0 | 0 | 0 |
+| Lesson Detail | 0 | 0 | 0 | 0 | 0 |
+| Homework Dashboard | 0 | 0 | 0 | 0 | 0 |
+| Homework Submission | 0 | 0 | 0 | 0 | 0 |
