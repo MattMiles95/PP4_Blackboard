@@ -3,10 +3,12 @@ const commentText = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
 const submitButton = document.getElementById("submitComment");
 
+/*global bootstrap*/
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
 
+/*global bootstrap*/
 const reportModal = new bootstrap.Modal(document.getElementById("reportModal"));
 const reportButtons = document.getElementsByClassName("btn-warning");
 const reportConfirm = document.getElementById("reportConfirm");

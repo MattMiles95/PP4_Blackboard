@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('.readable-font');
     const submitButton = form.querySelector('.btn-submit');
+    /* global bootstrap */
     const submissionModal = new bootstrap.Modal(document.getElementById("submissionModal"));
     
     // Prevent default form submission

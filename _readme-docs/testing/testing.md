@@ -22,7 +22,7 @@ Return to the [README](/README.md).
 <details>
 <summary> HTML Validation - W3C </summary>
 
-![Screenshot of HTML Validation from W3](/_readme-docs/images/validator_html.png)
+![Screenshot of HTML Validation from W3C](/_readme-docs/images/validator_html.png)
 </details>
 <br>
 
@@ -47,7 +47,7 @@ The below table shows the number of warnings and errors indicated for each page.
 <details>
 <summary> CSS Validation - W3C </summary>
 
-![Screenshot of HTML Validation from W3](/_readme-docs/images/validator_css.png)
+![Screenshot of HTML Validation from W3C](/_readme-docs/images/validator_css.png)
 </details>
 <br>
 
@@ -58,14 +58,136 @@ CSS passed validation with 0 errors and 1 warning. This warning was simply advis
 ### PEP8 (Python)
 
 <details>
-<summary> PEP8 (Python) Validation - * </summary>
+<summary> PEP8 (Python) Validation - CI Python Linter </summary>
+<br>
+blackboard/adapters.py:
 
-![Screenshot of Python Validation from *](/_readme-docs/images/validator_css.png)
+![Screenshot of Python Validation for blackboard/adapters](/_readme-docs/images/validator_python_blackboard_adapters.png)
+
+blackboard/settings.py:
+
+![Screenshot of Python Validation for blackboard/settings](/_readme-docs/images/validator_python_blackboard_settings.png)
+
+blackboard/urls.py:
+
+![Screenshot of Python Validation for blackboard/urls](/_readme-docs/images/validator_python_blackboard_urls.png)
+
+blackboard/views.py:
+
+![Screenshot of Python Validation for blackboard/views](/_readme-docs/images/validator_python_blackboard_views.png)
+
+homework/admin.py:
+
+![Screenshot of Python Validation for homework/admin](/_readme-docs/images/validator_python_homework_admin.png)
+
+homework/forms.py:
+
+![Screenshot of Python Validation for homework/forms](/_readme-docs/images/validator_python_homework_forms.png)
+
+homework/models.py:
+
+![Screenshot of Python Validation for homework/models](/_readme-docs/images/validator_python_homework_models.png)
+
+homework/urls.py:
+
+![Screenshot of Python Validation for homework/urls](/_readme-docs/images/validator_python_homework_urls.png)
+
+homework/views.py:
+
+![Screenshot of Python Validation for homework/views](/_readme-docs/images/validator_python_homework_views.png)
+
+lessons/admin.py:
+
+![Screenshot of Python Validation for lessons/admin](/_readme-docs/images/validator_python_lessons_admin.png)
+
+lessons/forms.py:
+
+![Screenshot of Python Validation for lessons/forms](/_readme-docs/images/validator_python_lessons_forms.png)
+
+lessons/models.py:
+
+![Screenshot of Python Validation for lessons/models](/_readme-docs/images/validator_python_lessons_models.png)
+
+lessons/urls.py:
+
+![Screenshot of Python Validation for lessons/urls](/_readme-docs/images/validator_python_lessons_urls.png)
+
+lessons/views.py:
+
+![Screenshot of Python Validation for lessons/views](/_readme-docs/images/validator_python_lessons_views.png)
 </details>
 <br>
 
-| **Directory** | **adapters.py** | **admin.py**| **forms.py** | **models.py** | **urls.py** | **views.py** |
-| --- | --- | --- | --- | --- | --- | --- |
-| Blackboard (Project) | * | * | * | * | * |
-| Lessons (App) | * | * | * | * | * | * |
-| Homework (App) | * | * | * | * | * | * |
+| **Directory** | **adapters.py** | **admin.py**| **forms.py** | **models.py** | **settings.py** | **urls.py** | **views.py** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Blackboard (Project) | Pass | n/a | n/a | n/a | Pass | Pass | Pass |
+| Lessons (App) | n/a | Pass | Pass | Pass | n/a | Pass | Pass |
+| Homework (App) | n/a | Pass | Pass | Pass | n/a | Pass | Pass |
+
+### JavaScript
+
+<details>
+<summary> JS Validation - JSHint </summary>
+<br>
+comments.js:
+
+![Screenshot of JS Validation for comments.js](/_readme-docs/images/validator_js_comments.png)
+
+homework.js:
+
+![Screenshot of JS Validation for homework.js](/_readme-docs/images/validator_js_homework.png)
+</details>
+<br>
+
+Both JavaScript files passed with no errors or warnings.
+
+## Lighthouse Testing
+
+Using the Lighthouse feature of Google Chrome's Dev Tools, I tested each of my site's pages for Performance, Accessibility, Best Practices and SEO (Search Engine Optimisation).
+
+<details>
+<summary> Lighthouse Reports </summary>
+<br>
+Homepage (Authorised):
+
+![Screenshot of Lighthouse Report for Homepage (Authorised)](/_readme-docs/images/lighthouse_homepage_auth.png)
+
+Homepage (Unauthorised):
+
+![Screenshot of Lighthouse Report for Homepage (Unauthorised)](/_readme-docs/images/lighthouse_homepage_unauth.png)
+
+Lesson Feed (English):
+
+![Screenshot of Lighthouse Report for Lesson Feed (English)](/_readme-docs/images/lighthouse_eng.png)
+
+Lesson Feed (History):
+
+![Screenshot of Lighthouse Report for Lesson Feed (History)](/_readme-docs/images/lighthouse_hist.png)
+
+Lesson Feed (Psychology):
+
+![Screenshot of Lighthouse Report for Lesson Feed (Psychology)](/_readme-docs/images/lighthouse_psych.png)
+
+Homework Dashboard:
+
+![Screenshot of Lighthouse Report for Homework Dashboard](/_readme-docs/images/lighthouse_homework-dashboard.png)
+
+Homework Submission:
+
+![Screenshot of Lighthouse Report for Homework Submission](/_readme-docs/images/lighthouse_homework-submission.png)
+
+Login:
+
+![Screenshot of Lighthouse Report for Login](/_readme-docs/images/lighthouse_login.png)
+
+Logout:
+
+![Screenshot of Lighthouse Report for Logout](/_readme-docs/images/lighthouse_logout.png)
+
+Register:
+
+![Screenshot of Lighthouse Report for Register](/_readme-docs/images/lighthouse_reg.png)
+</details>
+<br>
+
+As per the above screenshots, 'Lesson Feed (English)' and 'Lesson Feed (History)' each scored 78 on Best Practices. This is due to 

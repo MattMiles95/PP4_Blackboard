@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 from django.contrib.messages import constants as messages
 import dj_database_url
+import cloudinary
 if os.path.exists('env.py'):
     import env
 
@@ -165,6 +166,9 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
 }
 
+cloudinary.config(
+    secure=True
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
