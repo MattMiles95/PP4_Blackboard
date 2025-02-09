@@ -14,6 +14,8 @@ Return to the [README](/README.md).
 ### [Manual Testing & Bug Fixes](#manual-testing--bug-fixes)
 * [Manual Testing](#manual-testing)
 * [Bug Fixes](#bug-fixes)
+* [Browser Compatibility](#browser-compatibility)
+* [Device Compatibility](#device-compatibility)
 
 ## Validators
 
@@ -148,13 +150,13 @@ Using the Lighthouse feature of Google Chrome's Dev Tools, I tested each of my s
 <details>
 <summary> Lighthouse Reports </summary>
 <br>
-Homepage (Authorised):
+Homepage (Authenticated):
 
-![Screenshot of Lighthouse Report for Homepage (Authorised)](/_readme-docs/images/lighthouse_homepage_auth.png)
+![Screenshot of Lighthouse Report for Homepage (Authenticated)](/_readme-docs/images/lighthouse_homepage_auth.png)
 
-Homepage (Unauthorised):
+Homepage (Not Authenticated):
 
-![Screenshot of Lighthouse Report for Homepage (Unauthorised)](/_readme-docs/images/lighthouse_homepage_unauth.png)
+![Screenshot of Lighthouse Report for Homepage (Not Authenticated)](/_readme-docs/images/lighthouse_homepage_unauth.png)
 
 Lesson Feed (English):
 
@@ -196,8 +198,8 @@ Register:
 
 | **Page** | **Performance** | **Accessibility**| **Best Practices** | **SEO** |
 | --- | --- | --- | --- | --- |
-| Homepage (Authorised) | 98 | 98 | 100 | 90 |
-| Homepage (Unauthorised) | 98 | 98 | 100 | 90 |
+| Homepage (Authenticated) | 98 | 98 | 100 | 90 |
+| Homepage (Not Authenticated) | 98 | 98 | 100 | 90 |
 | Lesson Feed (Eng) | 95 | 95 | 100 | 91 |
 | Lesson Feed (Hist) | 95 | 95 | 100 | 91 |
 | Lesson Feed (Psych) | 100 | 100 | 100 | 91 |
@@ -234,6 +236,8 @@ Extensive manual testing was conducted on each feature of this project to ensure
 | Account Registration (password confirmation error) | Given the password provided in the confrimation box does not match the original password provided, the User is advised accordingly | Pass |
 | 'Sign in' link | Given the User clicks the 'Sign in' link, they are directed to the Login page | Pass |
 
+<br>
+
 #### Authentication - Login
 
 | **Feature** | **Expected Outcome** | **Result** |
@@ -242,24 +246,142 @@ Extensive manual testing was conducted on each feature of this project to ensure
 | Login (missing details) | Given the User tries to sign in without providing a username and/or password, they are prompted to complete these fields. | Pass |
 | Login (incorrect details) | Given the User tries to sign in by providing an incorrect username and/or password, they are advised accordingly. | Pass |
 | 'Sign up' link | Given the User clicks the 'Sign up' link, they are directed to the Registration page | Pass |
-| 'Remember Me' checkbox | Given the User clicks the 'Remember Me' checkbox, if they navigate away from the page and then return, they remain logged in | Exception |
+| Confirmation Message | Given the User successfully signs in, a confirmation message appears. | Pass |
+
+<br>
 
 #### Authentication - Logout
 
+| **Feature** | **Expected Outcome** | **Result** |
+| --- | --- | --- |
+| Logout | Given the User clicks the 'sign out' button, the User is logged out. | Pass |
+| Confirmation Message | Given the User successfully signs out, a confirmation message appears. | Pass |
+
+<br>
+
 #### Authentication - Security
+
+| **Feature** | **Expected Outcome** | **Result** |
+| --- | --- | --- |
+| Authenticated | Given the User is authenticated, they can freely navigate all pages of the site (excluding admin panel for non-staff accounts). | Pass |
+| Not Authenticated | Given the User is not authenticated, they are redirected to the login page should they try to access any of the site's other pages. | Pass |
+
+<br>
 
 #### Base Template Features
 
+| **Feature** | **Expected Outcome** | **Result** |
+| --- | --- | --- |
+| Nav Links | All navigation links contained within the header direct the User to the expected page. | Pass |
+| Authenticated | Given the User is authenticated, a welcome message shows in the header, as do the links to the subjects lesson feeds, homework dashboard and sign out page. | Pass |
+| Not Authenticated | Given the User is not authenticated, a message shows in the header advising them of this, as do the links to the account registration and sign in pages. | Pass |
+| Template Extending | The Base template is correctly extended on every page. | Pass |
+
+<br>
+
 #### Homepage
+
+| **Feature** | **Expected Outcome** | **Result** |
+| --- | --- | --- |
+| Authenticated | Given the User is authenticated, the three subject buttons appear. | Pass |
+| Not Authenticated | Given the User is not authenticated, a message appears to direct them to sign in or register for an account. | Pass |
+| Subject Buttons | Given the User clicks on a subject button, they are directed to the correct lesson feed. | Pass |
+
+<br>
 
 #### Lesson Feeds
 
+| **Feature** | **Expected Outcome** | **Result** |
+| --- | --- | --- |
+| Lesson Feed | All published lessons belonging to the selected subject appear in a single unbroken list. | Pass |
+| Draft Lessons | No draft lessons appear in the lesson feed. | Pass |
+| Lesson Detail | Given the User clicks on the title or summary of a lesson, they are directed to a detailed view of that lesson. | Pass |
+
+<br>
+
 #### Lesson Detail
+
+| **Feature** | **Expected Outcome** | **Result** |
+| --- | --- | --- |
+| Comment Counter | The comment counter displays the correct number of approved comments for that lesson. | Pass |
+| Comment Thread | All approved comments and are displayed within the Comment Thread. | Pass |
+| Comment Report Button | Given the User is not the author of a comment, a 'report' button appears beneath the comment. | Pass |
+| Comment Report Confirmation Modal | Given the User clicks the 'report' button, a confirmation modal appears. | Pass |
+| Comment Report Success | Given the User confirms the report, the comment is hidden from view of all Users (notwithstanding the comment author, who seems a faded version of the comment with a message advising it has been reported). A success message appears to the User who reported the comment. | Pass |
+| Comment Delete Button | Given the User is the author of a comment, a 'delete' button appears beneath the comment. | Pass |
+| Comment Delete Confirmation Modal | Given the User clicks the 'delete' button, a confirmation modal appears. | Pass |
+| Comment Delete Success | Given the User confirms the deletion, the comment is deleted from the database and a success message appears confirming the deletion. The comment disappears from the Comment Thread. | Pass |
+| Comment Edit Button | Given the User is the author of a comment, an 'edit' button appears beneath the comment. | Pass |
+| Comment Edit Process | Given the User clicks the 'edit' button, they are given the ability to edit the comment in the 'leave a comment' textbox. | Pass |
+| Comment Edit Success | Given the User confirms the edit, the comment is updated and a message appears confirming the same. | Pass |
+
+<br>
 
 #### Homework Dashboard
 
+ **Feature** | **Expected Outcome** | **Result** |
+| --- | --- | --- |
+| Subject Iteration | All subjects available to the User appear as buttons. | Pass |
+| Subject Buttons | Given the User clicks a subject button, they are taken to the Homework Submission page. | Pass |
+
+<br>
+
 #### Homework Submission
+
+**Feature** | **Expected Outcome** | **Result** |
+| --- | --- | --- |
+| Subject | The subject selected by the User in the homework dashboard is displayed after the "Submit Homework -" message. The lessons available to the User are only those contained within that subject. | Pass |
+| Form Submission (success) | Given the User correctly fills out the form, they are able to submit it by clicking the 'submit homework' button. A success message appears when this is done. | Pass |
+| Form Submission (no lesson) | Given the User attempts to submit the homework without selecting a lesson, a message prompts them to complete this field. | Pass |
+| Form Submission (no content) | Given the User attempts to submit the homework without providing any content, a message prompts them to complete this field. | Pass |
+
+<br>
 
 #### Admin Panel
 
+**Feature** | **Expected Outcome** | **Result** |
+| --- | --- | --- |
+| Restricted Access | Only accounts designated as 'staff' by a superuser can access the admin panel. | Pass |
+| Permissions | The features available to the User are restricted based on their account's permissions. | Pass |
+| Filters | All filters are correctly applied/removed when selected/deselected. | Pass |
+| Homeworks | All homework submitted to the database is viewable with full CRUD functionality. | Pass |
+| Comments | All comments submitted to the database are viewable with full CRUD functionality. | Pass |
+| Lessons | Access to lessons is restricted so that only superusers and the staff that created each lesson can access the given lesson via the Admin Panel. Users have fully CRUD fucntionality over the lessons they have access to. | Pass |
+| Subjects | Subjects are viewable by staff, but only editable by superusers. | Pass |
+| Users | Users are viewable by staff, but only editable by superusers. | Pass |
+
 ### Bug Fixes
+
+Throughout the development of my project, I carried out the following bug fixes:
+
+| Feature | Expected Outcome | Actual Outcome | Fix |
+| --- | --- | --- | --- |
+| Database | Updating models | Couldn't reconcile changes made | Error caused by deleting previous migration files, ultimately corrupting the database. A new database was created to replace the corrupted database |
+| Cloudinary Security | Secure responses received from Cloudinary | HTTP responses instead of HTTPS, causing unsecure responses | Updated settings.py to configure secure responses from Cloudinary |
+| Comment Report Button | Reported comment's status changes from 'approved' to 'reported' | 500 error | Bug caused by the initial report button having the same id as the report button in the confirmation modal, causing a JavaScript error. ID changed to differentiate between buttons |
+| Comment Edit Button | Clicking 'submit' button submits changes to comment | 500 error | ID 'submitButton' had been changed due to conflicting CSS, which caused a bug with the JavaScript. Html and JS updated with new ID |
+| Homework Submission Lesson Menu | Lesson dropdown menu only contains lessons associated with the selected subject | Menu empty | Created Homework Dashboard as a means for the subject to be selected prior to reaching the submission page, allowing for the subject.id to be correctly assigned prior to accessing the submission form |
+| Homepage subject buttons | Clicking a button directs the User to the respective lesson feed | No response | href's had been left as '#'s. Updated with correct url links |
+
+I am not aware of any further bugs effecting this project.
+
+#### Browser Compatibility
+
+Browser | Expected Outcome  | Result
+--- | --- | ---
+Google Chrome | No issues with appearance, functionality, performance or responsiveness | Pass
+Microsoft Edge | No issues with appearance, functionality, performance or responsiveness | Pass
+Mozilla Firefox | No issues with appearance, functionality, performance or responsiveness | Pass
+Safari | No issues with appearance, functionality, performance or responsiveness | Pass
+
+#### Device Compatibility
+
+Device | Expected Outcome | Result
+--- | --- | ---
+Samsung Galaxy S23 Ultra (412px x 750px) | No issues with appearance, functionality, performance or responsiveness | Pass
+iPhone 13 (390px x 661px) | No issues with appearance, functionality, performance or responsiveness | Pass
+Apple iPad 8th Gen (580px x 548px) | No issues with appearance, functionality, performance or responsiveness | Pass
+15.6" Portable Monitor (1280px x 551px) | No issues with appearance, functionality, performance or responsiveness | Pass
+15.6" Windows Laptop (1536px x 695px) | No issues with appearance, functionality, performance or responsiveness | Pass 
+
+(The above viewports were calculated using [whatismyviewport.com](https://whatismyviewport.com/) on each devices' maximised browser window.)

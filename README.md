@@ -125,6 +125,56 @@ Due to being targeted at educational institutions, I've designed the site to loo
 
 ### Colours
 
+<details>
+<summary> Examples of colour use </summary>
+
+<br>
+Subject Buttons:
+
+![Screenshot of the Subject Buttons](_readme-docs/images/colours_subject-btns.png)
+
+<br>
+Welcome Message:
+
+![Screenshot of the Welcome Message](_readme-docs/images/colours_welcome-msg.png)
+
+<br>
+Signed-Out Message:
+
+![Screenshot of the Signed-Out Message](_readme-docs/images/colours_signed-out-msg.png)
+
+<br>
+Deadline Flash:
+
+![Screenshot of a Deadline Flash](_readme-docs/images/colours_deadline.png)
+
+<br>
+Homework Dashboard:
+
+![Screenshot of the Homework Dashboard](_readme-docs/images/colours_homework-dashboard.png)
+
+<br>
+Homework Submission Button:
+
+![Screenshot of the Homework Submission Button](_readme-docs/images/colours_homework-submission.png)
+
+<br>
+Comment Buttons:
+
+![Screenshot of the Comment Buttons](_readme-docs/images/colours_comments.png)
+
+<br>
+Report Button:
+
+![Screenshot of the Report Button](_readme-docs/images/colours_report.png)
+
+<br>
+Registration:
+
+![Screenshot of the Registration Page](_readme-docs/images/colours_reg.png)
+</details>
+<br>
+
 As the nature of a 'blackboard theme' lends itself to a predominantly greyscale colour scheme, I've used pops of colour to draw the User's focus to important features, such as buttons, links and deadlines. Along with the images uploaded by teachers for their lessons, these pops of colour add enough vibrancy to make the site visually engaging, whilst still maintaining the blackboard theme.
 
 I have also used colour semantically throughout the site to communicate to the User certain features. For example, the colour <span style="color:#208fd9">blue (#208fd9)</span> is used for anything pertaining to homework (deadline flashes, buttons in the homework dashboard and the submit button on the homework submission page). This was primarily done to offer a simple visual distinction between the homepage and the homework dashboard, which have the same layout but for slightly different text, and the homepage buttons being <span style="color:#5a9171">green (#5a9171)</span>. This design extends into the buttons and alert messages that appear as well; for example, the 'delete comment' button being <span style="color:#ba2626">red (danger).
@@ -224,7 +274,7 @@ To deliver a satisfying UX, I have used Django messages throughout the site to p
 
 ![Screenshot of the account registration page](_readme-docs/images/feature_authentication_reg.png)
 
-As this site is directed at educational institutions, security is very important - particularly ensuring that no unauthorised persons gain access to the site. For this reason, I have used Django's built-in authorisation models to verify that the User has logged in before being able to access any of the site's content. Should an unauthenticated User try to gain access to the site via a URL path, they will be automatically redirected to the account registration page.
+As this site is directed at educational institutions, security is very important - particularly ensuring that no unauthorised persons gain access to the site. For this reason, I have used Django's built-in authorisation models to verify that the User has logged in before being able to access any of the site's content. Should an unauthenticated User try to gain access to the site via a URL path, they will be automatically redirected to the login page.
 
 Although this project doesn't utilise email verificaion for setting up new accounts, this would be a feature of the real product, as this would ensure that only those with a valid email account for the client institution can create an account. To emulate this feature, I have added a restriction to the account registration form to only accept email addresses ending in '@merleyhillstone.net'.
 </details>
