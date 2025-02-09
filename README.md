@@ -543,4 +543,4 @@ All lesson content featured in this project was generated via ChatGPT. All other
 
 ### Code Credits
 
-The 'lesson feed' and 'lesson detail' features of this project were based off the 'index' and 'post detail' files from Code Institute's 'I Think Therefore I Blog' walkthrough project. This includes some of the CSS, as well as the python and JavaScript for User comments. All other code featured in this project has been written by me, with the assistance of the Slack community, various forums, articles and YouTube videos, and the help from my mentor, Mitko Bachvarov.
+The 'lesson feed' and 'lesson detail' features of this project were based off the 'index' and 'post detail' files from Code Institute's 'I Think Therefore I Blog' walkthrough project. This includes some of the CSS, as well as the python and JavaScript for User comments (with some amendments made to better suit my project). All other code featured in this project has been written by me, with the assistance of the Slack community, various forums, articles and YouTube videos, and the help from my mentor, Mitko Bachvarov.
