@@ -43,10 +43,12 @@ If you have a superuser or staff account, you can [access the admin panel here](
 ### [Local Development & Deployment](#local-development--deployment-1)
 * [Forking the GitHub Repository](#forking-the-github-repository)
 * [Local Clone](#local-clone)
-### [Credits](#credits)
+* [Code Institute PostgreSQL Database](#code-institute-postgresql-database)
+* [Cloudinary](#cloudinary)
+### [Credits](#credits-1)
 * [Affiliations](#affiliations)
 * [Copy (Written Material)](#copy-written-material)
-* [Online Resources](#online-resources)
+* [Code Credits](#code-credits)
 
 ## User Experience (UX)
 
@@ -348,7 +350,7 @@ From the 'Comments' admin panel, staff have full CRUD functionality over User co
 <details>
 <summary> Homework Submissions </summary>
 
-![Screenshot of 'Homework' from the Admin Panel](_readme-docs/images/admin_comments.png)
+![Screenshot of 'Homework' from the Admin Panel](_readme-docs/images/admin_homework.png)
 
 From the 'Homework' admin panel, staff can view all received homework submissions. As with other admin panels, these can be organised or filtered by certain values, such as lesson or subject. By default, when a student submits their homework, it is given a status of 'marked==False'. Staff can change this value to help filter out the homeworks they've already marked. Each homework submission has a section where students can leave comments for the teacher, as well as a section where teachers can make their own notes as they mark the work.
 </details>
