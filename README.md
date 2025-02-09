@@ -126,6 +126,12 @@ Due to being targeted at educational institutions, I've designed the site to loo
 ### Colours
 
 <details>
+<summary> Colour Palette </summary>
+
+![Project Colour Palette](_readme-docs/images/colour_palette.png)
+</details>
+
+<details>
 <summary> Examples of colour use </summary>
 
 <br>
